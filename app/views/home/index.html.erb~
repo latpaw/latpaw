@@ -1,0 +1,15 @@
+<h1>Home#index Link to <%= link_to 'Posts' , posts_path %></h1>
+
+      <% if user_signed_in? -%>
+        <div id="user_login_box" style="float:right">
+          <%= current_user.email %> |
+          <%= link_to 'My info', edit_user_registration_path %> |
+          <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+        </div>
+      <% end -%>
+
+
+<% unless user_signed_in? -%>
+  <p><%= link_to 'Sign up as User', new_user_registration_path %></p>
+  <p><%= link_to 'Sign in as User', new_user_session_path %></p>
+<% end -%>
