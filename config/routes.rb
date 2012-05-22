@@ -7,7 +7,7 @@ Aa::Application.routes.draw do
 devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
 
-   root :to => 'posts#index'
+   root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 
