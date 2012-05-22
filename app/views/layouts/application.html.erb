@@ -7,6 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="top">
+<div class="logo fl"><%= link_to "Root Home", root_url %></div>
 <% if user_signed_in? -%>
 <div id="user_login_box" style="float:right">
   <%= current_user.email %> |
@@ -17,10 +19,16 @@
 
 
 <% unless user_signed_in? -%>
-  <p><%= link_to 'Sign up as User', new_user_registration_path %></p>
-  <p><%= link_to 'Sign in as User', new_user_session_path %></p>
-  <p><%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %></p>
+<div class="loginout">
+  <p class="fl"><%= link_to 'Sign up', new_user_registration_path %></p>
+  <p class="fl"><%= link_to 'Sign in', new_user_session_path %></p>
+  <p class="fl"><%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %></p>
+<br />
+</div>
 <% end -%>
+
+</div>
+<div class="clear"></div>
 <%= yield %>
 
 </body>
