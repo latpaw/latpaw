@@ -10,7 +10,9 @@ gem 'thin'
 gem 'devise'
 gem 'cancan'
 gem 'omniauth-github'
-gem 'rdiscount'
+gem 'redcarpet'
+gem 'bootstrap'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -22,6 +24,7 @@ group :assets do
    gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+gem 'twitter-bootstrap-rails'
 end
 
 gem 'jquery-rails'

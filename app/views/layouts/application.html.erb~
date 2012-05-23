@@ -7,41 +7,44 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="top">
-<div class="logo fl"><%= link_to(image_tag('rails.png'),root_url) %></div>
-<% if user_signed_in? -%>
-<div id="user_login_box" style="float:right">
-  <%= current_user.email %> |
-  <%= link_to 'My info', edit_user_registration_path %> |
-  <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
-</div>
-<% end -%>
-
-
-
-<% unless user_signed_in? -%>
-<div class="loginout">
-  <p class="fl"><%= link_to 'Sign up', new_user_registration_path %></p>
-  <p class="fl"><%= link_to 'Sign in', new_user_session_path %></p>
-  <p class="fl"><%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %></p>
-<br />
-</div>
-<% end -%>
-<div class="clear"></div>
-</div>
-<div class="clear"></div>
-<section class="body"></section>
-<nav >
-<ul>
+    <div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+<ul class="nav">
         <li><%= link_to "Home", root_url %></li>
-	<li><%= link_to "Post", posts_path %></li>
+	<li class="active"><%= link_to "Post", posts_path %></li>
 	<li><%= link_to "Google", "http://www.google.com" %></li>
 	<li><%= link_to "Ruby CHina", "http://ruby-china.org" %></li>
 	<li><%= link_to "Something", "ss" %></li>
+    <form class="navbar-search pull-left">
+    <input type="text" class="search-query" placeholder="Search">
+    </form>
+<% if user_signed_in? -%>
+  <li><%= current_user.email %> |
+  <li><%= link_to 'My info', edit_user_registration_path %> |
+  <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+
+<% end -%>
+<% unless user_signed_in? -%>
+  <li><%= link_to 'Sign up', new_user_registration_path %></p>
+  <li><%= link_to 'Sign in', new_user_session_path %></p>
+  <li><%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %></p>
+<% end -%>
 </ul>
-</nav>
+    </div>
+    </div>
+    </div>
+
+<div class="top container">
+<div class="logo fl"><%= link_to(image_tag('rails.png'),root_url) %></div>
+
+<div class="clear"></div>
+</div>
+<div class="clear"></div>
+<section class="body">
+
 <div class="clear"></div>
 <%= yield %>
-
+</section>
 </body>
 </html>

@@ -27,5 +27,7 @@ h3 a{text-decoration:none;}
 
 .body{width:1000px;margin:0 auto;}
 
-.comment-wrap{border:1px #aaa solid;border-radius:5px;}
-.comment{width:800px;margin:0 auto;border-bottom:1px #aaa dotted;}
+.comment-wrap{border:1px #aaa solid;border-radius:5px;min-height:100px;}
+.comment{width:800px;margin:0 auto;border-bottom:1px #aaa dotted;margin-top:10px;}
+
+

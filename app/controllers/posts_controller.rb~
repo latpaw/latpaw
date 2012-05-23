@@ -14,7 +14,9 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
-    @next_post = Post.find(params[:id]+1)
+markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
+    :autolink => true, :space_after_headers => true)
+
 
     respond_to do |format|
       format.html # show.html.erb
