@@ -11,7 +11,7 @@
  *= require_self
  *= require_tree .
 */
-@import "bootstrap";
+@import "bootstrap"
 .fl{float:left;margin-right:10px;}
 .fr{float:right;}
 .logo{line-height:20px;}
