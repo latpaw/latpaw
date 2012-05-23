@@ -12,5 +12,20 @@
  *= require_tree .
 */
 .fl{float:left;margin-right:10px;}
-.loginout{float:right;}
+.fr{float:right;}
+.logo{line-height:20px;}
+.loginout{float:right;line-height:20px;}
+.loginout p{margin:0;padding:0;margin-left:10px;}
 .clear{clear:both;}
+
+nav{width:100%;min-width:960px}
+nav li{float:left;margin-left:20px;list-style:none;}
+
+h3 a{text-decoration:none;}
+.sed{border:1px #aaa solid;padding:5px;border-radius:5px;width:150px;}
+.sed:hover{border:1px rgba(82,168,236,0.6) solid;box-shadow:0 1px 1px rgba(0,0,0,0.075) inset, 0 0 8px rgba(82,168,236,0.6);background:rgba(0,0,0,0.075);}
+
+.body{width:1000px;margin:0 auto;}
+
+.comment-wrap{border:1px #aaa solid;border-radius:5px;}
+.comment{width:800px;margin:0 auto;border-bottom:1px #aaa dotted;}

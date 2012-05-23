@@ -1,12 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+  <h1> <%= @post.name %></h1>
+  <%h time_tag @post.created_at %>
+  
 <p>
-  <b>Name:</b>
-  <%= @post.name %>
-</p>
-
-<p>
-  <b>Content:</b>
   <%= @post.content %>
 </p>
 <% if can? :destroy, @post %>
@@ -14,4 +11,46 @@
 <% end %>
 <% if can? :update, @post %>
 <%= link_to 'Edit', edit_post_path(@post) %> |
+<% end %>
 <%= link_to 'Back', posts_path %>
+<br /><br />
+
+<h2>Comments:</h2>
+<section class="comment-wrap">
+<% @post.comments.each do |comment| %>
+<div class="comment">
+  <%= link_to 'X', [comment.post, comment],
+               :confirm => 'Are you sure?',
+               :method => :delete ,
+               :class=>'fr'%>
+<b>Comment:</b><br />
+
+<%= comment.body %> <br />
+<span class="fr">by <%= comment.commenter%></span>
+<div class="clear"></div>
+</div>
+
+
+
+
+<% end %>
+
+</section>
+<br />
+
+<h2>Add a comment:</h2>
+<%= form_for([@post,@post.comments.build]) do |f| %>
+<div class="field">
+  <%= f.label :commenter %>
+  <%= f.text_field :commenter %>
+</div>
+<div class="field">
+  <%= f.label :body%>
+  <%= f.text_area :body%>
+</div>
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>
+
+
