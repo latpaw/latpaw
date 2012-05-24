@@ -1,7 +1,12 @@
-<p id="notice"><%= notice %></p>
-
+<% unless notice.nil? %>
+<p id="notice" class="alert alert-info">
+<a class="close" data-dismiss="alert">×</a>
+<%= notice %>
+</p>
+<% end %>
   <h1> <%= @post.name %></h1>
-  <%=h time_tag @post.created_at %>
+  <p><%= social_share_button_tag(@post.name) %></p>
+  <%=h time_tag @post.created_at ,:class=>"gray"%>
   
 <p>
   <%= raw markdown.render(@post.content) %>
@@ -34,14 +39,14 @@
 <br />
 
 <h2>Add a comment:</h2>
-<%= form_for([@post,@post.comments.build]) do |f| %>
+<%= form_for([@post,@post.comments.build])  do |f| %>
 <div class="field">
   <%= f.label :commenter %>
-  <%= f.text_field :commenter %>
+  <%= f.text_field :commenter ,:class=>"span6"%>
 </div>
 <div class="field">
   <%= f.label :body%>
-  <%= f.text_area :body%>
+  <%= f.text_area :body, :class=>"span6 commentbody"%>
 </div>
 <div class="actions">
   <%= f.submit :class=>"btn btn-primary"%>

@@ -3,7 +3,7 @@
 <% @posts.each do |post| %>
   <section>
     <h3><%= link_to post.name , post %></h3>
-    <p><%= link_to post.created_at %></p>
+    <p><%= time_tag post.created_at %></p>
     <p><%= post.content %></p>
     <p class="sed"><%= link_to 'Show', post %> | <%= link_to 'Edit', edit_post_path(post) %> | <%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></p>
   </section>
@@ -11,5 +11,6 @@
 </article>
 
 <br />
-
+<% unless can? :new, @post %>
 <%= link_to 'New Post', new_post_path %>
+<% end %>

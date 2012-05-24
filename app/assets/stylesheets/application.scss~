@@ -12,7 +12,7 @@
  *= require_tree .
  *= require social-share-button
 */
-a:hover{background:none;text-decoration:none!important}
+
 .fl{float:left;margin-right:10px;}
 .fr{float:right;}
 .logo{line-height:20px;}
@@ -25,7 +25,7 @@ nav li{float:left;margin-left:20px;list-style:none;}
 
 h3 a{text-decoration:none;}
 .sed{border:1px #aaa solid;padding:5px;border-radius:5px;width:150px;}
-.sed:hover{border:1px rgba(82,168,236,0.6) solid;box-shadow:0 1px 1px rgba(0,0,0,0.075) inset, 0 0 8px rgba(82,168,236,0.6);}
+.sed:hover{border:1px rgba(82,168,236,0.6) solid;box-shadow:0 1px 1px rgba(0,0,0,0.075) inset, 0 0 8px rgba(82,168,236,0.6);background:rgba(0,0,0,0.075);}
 
 .body{width:1000px;margin:0 auto;}
 
@@ -33,5 +33,6 @@ h3 a{text-decoration:none;}
 .comment{width:90%;margin:0 auto;border-bottom:1px #aaa dotted;margin-top:10px;}
 
 body{padding:0;margin:0}
-.gray{color:#aaa}
+
+.mtop10{margin-top:10px;}
 

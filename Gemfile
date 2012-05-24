@@ -12,7 +12,7 @@ gem 'cancan'
 gem 'omniauth-github'
 gem 'redcarpet'
 gem 'anjlab-bootstrap-rails', '>= 2.0', :require => 'bootstrap-rails'
-
+gem 'social-share-button'
 
 
 # Gems used only for assets and not required

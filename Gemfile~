@@ -11,7 +11,9 @@ gem 'devise'
 gem 'cancan'
 gem 'omniauth-github'
 gem 'redcarpet'
-gem 'bootstrap-sass'
+gem 'anjlab-bootstrap-rails', '>= 2.0', :require => 'bootstrap-rails'
+
+
 
 # Gems used only for assets and not required
 # in production environments by default.
