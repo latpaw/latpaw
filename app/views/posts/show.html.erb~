@@ -9,6 +9,7 @@
   <%=h time_tag @post.created_at ,:class=>"gray"%>
   
 <p>
+  <%= image_tag @post.avatar_url %>
   <%= raw markdown.render(@post.content) %>
 </p>
 <% if can? :destroy, @post %>
@@ -39,7 +40,7 @@
 <br />
 
 <h2>Add a comment:</h2>
-<%= form_for([@post,@post.comments.build],:class=>"well")  do |f| %>
+<%= form_for([@post,@post.comments.build])  do |f| %>
 <div class="field">
   <%= f.label :commenter %>
   <%= f.text_field :commenter ,:class=>"span6"%>

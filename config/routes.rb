@@ -1,4 +1,6 @@
 Aa::Application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   resources :posts do
     resources :comments
     resources :tags
