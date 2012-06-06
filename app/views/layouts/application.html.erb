@@ -22,7 +22,7 @@
     <input type="text" class="search-query" placeholder="Search">
     </form>
     </ul>
-    <ul class="nav pull-right mtop10">
+    <ul class="nav pull-right" style="margin-top:10px;">
 <% if user_signed_in? -%>
   <%= current_user.email %>
   <%= link_to 'My info', edit_user_registration_path %>
@@ -30,9 +30,9 @@
 
 <% end -%>
 <% unless user_signed_in? -%>
-  <li><%= link_to 'Sign up', new_user_registration_path %></p></li>
+  <!--li><%= link_to 'Sign up', new_user_registration_path %></p></li-->
   <li><%= link_to 'Sign in', new_user_session_path %></p></li>
-  <li><%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %></p></li>
+  <!--li><%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %></p></li-->
 <% end -%>
 </ul>
     </div>

@@ -1,8 +1,10 @@
 class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
+ load_and_authorize_resource
   def index
-    @posts = Post.all
+    @pre_posts = Post.paginate(:page=>params[:page],:per_page=>3)
+    @posts = will_paginate @pre_posts
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,8 +16,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
-markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
-    :autolink => true, :space_after_headers => true)
+
 
 
     respond_to do |format|
@@ -28,7 +29,7 @@ markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
   # GET /posts/new.json
   def new
     @post = Post.new
-
+ 
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @post }

@@ -1,0 +1,8 @@
+<h1>Recent Posts</h1>
+<article>
+<% @posts.each do |post| %>
+  <section>
+    <h3><%= link_to post.name , post %></h3>
+  </section>
+<% end %>
+</article>

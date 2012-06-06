@@ -1,8 +1,10 @@
 class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
+ load_and_authorize_resource
   def index
-    @posts = Post.all
+    @posts = Post.paginate(:page=>params[:page],:per_page=>3)
+    
 
     respond_to do |format|
       format.html # index.html.erb
@@ -27,7 +29,7 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
     @post = Post.new
-
+ 
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @post }

@@ -9,7 +9,7 @@
   <%=h time_tag @post.created_at ,:class=>"gray"%>
   
 <p>
-  <%= image_tag @post.avatar_url(:thumb) %>
+  
   <%= raw markdown.render(@post.content) %>
 </p>
 <% if can? :destroy, @post %>
