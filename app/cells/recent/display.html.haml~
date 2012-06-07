@@ -1,0 +1,9 @@
+%h4
+  Recent Posts
+-num=1
+%section
+  -@posts.each do |post|
+    %p
+      = num
+      = link_to post.name , post
+    - num=num+1

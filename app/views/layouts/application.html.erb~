@@ -22,7 +22,7 @@
     <input type="text" class="search-query" placeholder="Search">
     </form>
     </ul>
-    <ul class="nav pull-right">
+    <ul class="nav pull-right" style="margin-top:10px;">
 <% if user_signed_in? -%>
   <%= current_user.email %>
   <%= link_to 'My info', edit_user_registration_path %>
@@ -42,13 +42,15 @@
 <section class="body">
 <div class="container-fluid">
 <div class="row-fluid">
-<div class="span8">
+<div class="span7">
 <%= yield %>
 </div>
 
-<div class="span2">
+<div class="span3">
 
-<p>Leave blank for related or newest post</p>
+<p>Recent Posts
+<%= render_cell :recent, :display %>
+</p>
 </div>
 </div>
 </div>

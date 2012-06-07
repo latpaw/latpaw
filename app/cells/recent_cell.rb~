@@ -1,0 +1,7 @@
+class RecentCell < Cell::Rails
+
+  def display(args)
+    render
+  end
+
+end

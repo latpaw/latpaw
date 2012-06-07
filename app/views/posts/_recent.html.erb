@@ -1,8 +1,10 @@
-<h1>Recent Posts</h1>
-<section>
-<% @posts.each do |post| %>
-  <p>
-    <h3><%= link_to post.name , post %></h3>
-  </p>
+<aside>
+<%- num = 1 %>
+<% @postss.each do |post| %>
+    <p><%= num %> . <%= link_to post.name , post %></p>
+       <%- num = num +1 %>
 <% end %>
-</section>
+</aside>
+
+
+

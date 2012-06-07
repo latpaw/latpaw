@@ -20,12 +20,14 @@
   </section>
 <% end %>
 </article>
+
 <div class="digg_pagination">
-<div class="page_info">
- <%= page_entries_info @posts %>
+  <div class="page_info">
+   <%= page_entries_info @posts %>
+  </div>
+  <%= will_paginate @posts%>
 </div>
-<%= will_paginate @posts%>
-</div>
+
 <br />
 <% if can? :new, @post %>
 <%= link_to 'New Post', new_post_path %>

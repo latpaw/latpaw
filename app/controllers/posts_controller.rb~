@@ -2,9 +2,11 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
  load_and_authorize_resource
+ 
   def index
-    @pre_posts = Post.paginate(:page=>params[:page],:per_page=>3)
-    @posts = will_paginate @pre_posts
+    @postss = Post.all
+    @posts = Post.paginate(:page=>params[:page],:per_page=>3)
+    
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,6 +17,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @posts = Post.all
     @post = Post.find(params[:id])
 
 

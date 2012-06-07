@@ -28,6 +28,8 @@ GEM
     activesupport (3.2.3)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    acts-as-taggable-on (2.3.1)
+      rails (~> 3.0)
     anjlab-bootstrap-rails (2.0.3.2)
       railties (>= 3.0)
       sass
@@ -187,6 +189,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on
   anjlab-bootstrap-rails (>= 2.0)
   bootstrap
   by_star

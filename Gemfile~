@@ -25,6 +25,7 @@ gem 'rolify'
 gem 'by_star'
 gem 'wice_grid'
 
+gem 'cells'
 
 # Gems used only for assets and not required
 # in production environments by default.
