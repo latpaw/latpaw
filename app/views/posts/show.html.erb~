@@ -12,6 +12,13 @@
   
   <%= raw markdown.render(@post.content) %>
 </p>
+
+<p class="gray"><i class="icon-tags"></i> : <% @post.tags.each do |tag| %>
+  <%= link_to tag.name , {:action=>:tag,:tag_id=>tag.name}, :class=>"label label-success" %>
+<% end %>
+
+
+</p>
 <% if can? :destroy, @post %>
 <%= link_to 'Destroy', @post , :method=> :delete , :confirm=>"Are you sure to delete ?" %> | 
 <% end %>
@@ -29,10 +36,9 @@
                :confirm => 'Are you sure?',
                :method => :delete ,
                :class=>'fr'%>
-<b>Comment:</b><br />
+<span><%= comment.commenter%> says : </span><br />
+<p class="comment"><%= comment.body %></p> <br />
 
-<%= comment.body %> <br />
-<span class="fr">by <%= comment.commenter%></span>
 <div class="clear"></div>
 </div>
 <% end %>

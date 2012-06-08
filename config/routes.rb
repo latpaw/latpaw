@@ -8,6 +8,7 @@ Aa::Application.routes.draw do
 
   get "home/index"
 
+  match 'posts/tag/:tag_id', :to=> 'posts#tag'
 
 devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 

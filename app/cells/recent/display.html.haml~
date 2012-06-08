@@ -1,9 +1,8 @@
-%h4
+%h2
   Recent Posts
--num=1
 %section
   -@posts.each do |post|
     %p
-      = num
+      %i."icon-play icon-search"
       = link_to post.name , post
-    - num=num+1
+

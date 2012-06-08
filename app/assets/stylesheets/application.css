@@ -31,7 +31,11 @@ h3 a{text-decoration:none;}
 
 .comment-wrap{border:1px #aaa solid;border-radius:5px;min-height:100px;}
 .comment{width:90%;margin:0 auto;border-bottom:1px #aaa dotted;margin-top:10px;}
+.comment-c{margin-left:20px;}
 section{margin-top:20px;}
+
+.tag_post{padding:10px;margin:0;}
+.tag_post:hover{border:1px rgba(82,168,236,0.6) solid;box-shadow:0 1px 1px rgba(0,0,0,0.075) inset, 0 0 8px rgba(82,168,236,0.6);}
 
 body{padding:0;margin:0}
 .gray{color:#aaa}

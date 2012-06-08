@@ -5,4 +5,5 @@ def markdown
     :autolink => true, :space_after_headers => true)
 end
 
+include ActsAsTaggableOn::TagsHelper
 end

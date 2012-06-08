@@ -1,7 +1,7 @@
 module PostsHelper
 
 def markdown 
-  markdowns = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
+  Redcarpet::Markdown.new(Redcarpet::Render::HTML,
     :autolink => true, :space_after_headers => true)
 end
 
