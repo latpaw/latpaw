@@ -5,8 +5,10 @@ class Ability
     user ||= User.new
     if user.has_role? :admin
       can :manage, :all
-    else
+    elsif user.has_role? :writer
       can :read, :all
+    else
+      can :read, Post
     end
 
   end
