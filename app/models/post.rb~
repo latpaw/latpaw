@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :tags, :content, :name, :avatar, :avatar_cache
+  attr_accessible :tag_list, :content, :name, :avatar, :avatar_cache
   
   has_many :comments, :dependent => :destroy
   

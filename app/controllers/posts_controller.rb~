@@ -2,10 +2,8 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
  load_and_authorize_resource
-  skip_authorize_resource :only=> :tags
-  def tag_cloud
-    @tags = Post.tag_counts_on(:tags)
-  end 
+  skip_authorize_resource :only=> :tag
+
 
   def tag
     @posts = Post.tagged_with(params[:tag_id])
@@ -13,7 +11,7 @@ class PostsController < ApplicationController
 
   def index
     @postss = Post.all
-    @posts = Post.paginate(:page=>params[:page],:per_page=>3)
+    @posts = Post.paginate(:page=>params[:page],:per_page=>10)
     
 
     respond_to do |format|
@@ -27,7 +25,8 @@ class PostsController < ApplicationController
   def show
     @postss = Post.all
     @post = Post.find(params[:id])
-
+    @tags = Post.tag_counts_on(:tags)
+ 
 
 
     respond_to do |format|

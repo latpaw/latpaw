@@ -3,6 +3,6 @@
 %section
   -@posts.each do |post|
     %p
-      %i."icon-play icon-search"
+      %i.icon-play
       = link_to post.name , post
 

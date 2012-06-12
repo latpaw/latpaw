@@ -4,17 +4,22 @@
 <%= notice %>
 </p>
 <% end %>
+<p><%= link_to "Home", :root %> / <%= link_to "Posts", posts_path %> / <%= @post.name %></p>
   <h1> <%= @post.name %></h1>
   <p><%= social_share_button_tag(@post.name) %></p>
   <%=h time_tag @post.created_at ,:class=>"gray"%>
   
 <p>
-  
   <%= raw markdown.render(@post.content) %>
 </p>
 
 <p class="gray"><i class="icon-tags"></i> : <% @post.tags.each do |tag| %>
-  <%= link_to tag.name , {:action=>:tag,:tag_id=>tag.name}, :class=>"label label-success" %>
+  <%= link_to(:action=>:tag,:tag_id=>tag.name) do %>
+    <span class="label label-success"><%= tag.name%></span>
+  <% end %>
+  <%= link_to 'X', @tag,
+               :confirm => 'Are you sure?',
+               :method => :delete %>
 <% end %>
 
 
@@ -30,6 +35,7 @@
 
 <h2>Comments:</h2>
 <section class="comment-wrap">
+<p class="label label-info"><%= @post.comments.count.to_s %> comments has been submitted.</p>
 <% @post.comments.each do |comment| %>
 <div class="comment">
   <%= link_to 'X', [comment.post, comment],
@@ -37,7 +43,7 @@
                :method => :delete ,
                :class=>'fr'%>
 <span><%= comment.commenter%> says : </span><br />
-<p class="comment"><%= comment.body %></p> <br />
+<p class="comment-c"><%= comment.body %></p> <br />
 
 <div class="clear"></div>
 </div>
@@ -59,5 +65,6 @@
   <%= f.submit :class=>"btn btn-primary"%>
 </div>
 <% end %>
+
 
 
