@@ -29,7 +29,7 @@ h3 a{text-decoration:none;}
 
 .body{width:1000px;margin:0 auto;}
 
-.comment-wrap{border:1px #aaa solid;border-radius:5px;min-height:100px;}
+.comment-wrap{border:1px #ccc solid;border-radius:5px;min-height:100px;}
 .comment{width:90%;margin:0 auto;border-bottom:1px #aaa dotted;margin-top:10px;}
 .comment-c{margin-left:20px;}
 section{margin-top:20px;}
@@ -40,3 +40,8 @@ section{margin-top:20px;}
 body{padding:0;margin:0}
 .gray{color:#aaa}
 .commentbody{height:100px;}
+
+.css1{font-size:1.0em;}
+.css2{font-size:1.2em;}
+.css3{font-size:1.4em;}
+.css4{font-size:1.6em;}

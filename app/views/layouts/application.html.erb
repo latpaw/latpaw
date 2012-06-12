@@ -23,6 +23,9 @@
     </form>
     </ul>
     <ul class="nav pull-right" style="margin-top:10px;">
+<% if can? :create, Post %>
+<%= link_to 'New Post', new_post_path %>
+<% end %>
 <% if user_signed_in? -%>
   <%= current_user.email %>
   <%= link_to 'My info', edit_user_registration_path %>
@@ -48,10 +51,12 @@
 
 <div class="span3">
 
-<p>
-<%= render_cell :recent, :display %>
-
-</p>
+   <section>
+   <%= render_cell :recent, :display %>
+   </section>
+   <section>
+   <%= render_cell :tagcloud, :tagcloud %>
+   </section>
 </div>
 </div>
 </div>

@@ -8,7 +8,7 @@ gem 'rails', '3.2.3'
 gem 'pg'
 gem 'thin'
 gem 'devise'
-gem 'cancan'
+gem 'cancan','2.0.0'
 gem 'omniauth-github'
 gem 'redcarpet'
 gem 'anjlab-bootstrap-rails', '>= 2.0', :require => 'bootstrap-rails'
@@ -35,6 +35,8 @@ gem 'wice_grid'
 
 gem 'cells'
 >>>>>>> 36acf40c89caa7749a81ac6c97b4c08d3b0fcfd1
+
+gem 'acts-as-taggable-on'
 
 # Gems used only for assets and not required
 # in production environments by default.

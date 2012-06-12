@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  def tag_cloud
-    @tags = Post.tag_counts_on(:tags)
-  end
+
+@tags = Post.tag_counts_on(:tags)
  
 end

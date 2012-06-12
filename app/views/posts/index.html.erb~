@@ -1,4 +1,4 @@
-<h1>Listing posts</h1>
+<h1>All Posts</h1>
 <article>
 
 <% @posts.each do |post| %>
@@ -7,16 +7,6 @@
     <p><%= time_tag post.created_at %></p>
     <%  abc = truncate(post.content,:length=>200) %>
     <p><%= raw markdown.render(abc) %></p>
-    <p class="sed"><%= link_to 'Show', post %>
-
-<% if can? :update, @post %>
- | <%= link_to 'Edit', edit_post_path(post) %> 
-<% end %>
-
-<%if can? :destroy, @post %>
-| <%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %>
-<% end %>
-</p>
   </section>
 <% end %>
 </article>
@@ -29,6 +19,7 @@
 </div>
 
 <br />
-<% if can? :new, @post %>
-<%= link_to 'New Post', new_post_path %>
-<% end %>
+
+
+
+

@@ -21,8 +21,11 @@
     <%= f.text_area :content,:class=>"span10" %>
   </div>
    <div class="field">
-    <%= f.label :tags %><br />
-    <%= f.text_field :tags,:class=>"span10" %>
+    <%= f.label :tag_list %><br />
+    <%= f.text_field :tag_list,:class=>"span10" %>
+  </div>
+   <div class="field">
+    <%= f.hidden_field :userid,:class=>"span10" %>
   </div>
   
  

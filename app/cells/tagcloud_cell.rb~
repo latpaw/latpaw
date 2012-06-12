@@ -1,0 +1,7 @@
+class TagcloudCell < Cell::Rails
+
+  def tagcloud
+    render
+  end
+
+end
