@@ -5,5 +5,10 @@ def markdown
     :autolink => true, :space_after_headers => true)
 end
 
+include ActsAsTaggableOn::TagsHelper
 
+    def remove_tag(post,ppp)
+     post.tag_list.remove(ppp)
+     post.save
+    end
 end

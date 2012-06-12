@@ -4,7 +4,7 @@ end
     
 
    def destroy
-    @tag = Tag.find(params[:id])
+    @tag = Tag.find(params[:tag_id])
    end
 end
 

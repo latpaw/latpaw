@@ -9,6 +9,12 @@ class PostsController < ApplicationController
     @posts = Post.tagged_with(params[:tag_id])
   end
 
+  def remove 
+    @post = Post.find(params[:id])
+    @post.tag_list.remove(:tag_id)
+    @post.save
+  end
+
   def index
     @postss = Post.all
     @posts = Post.paginate(:page=>params[:page],:per_page=>10)
@@ -25,9 +31,6 @@ class PostsController < ApplicationController
   def show
     @postss = Post.all
     @post = Post.find(params[:id])
-    
- 
-
 
     respond_to do |format|
       format.html # show.html.erb

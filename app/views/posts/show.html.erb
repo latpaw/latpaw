@@ -17,7 +17,7 @@
   <%= link_to(:action=>:tag,:tag_id=>tag.name) do %>
     <span class="label label-success"><%= tag.name%></span>
   <% end %>
-  <%= link_to 'X', @tag,
+ <%= link_to 'X', tag_path,
                :confirm => 'Are you sure?',
                :method => :delete %>
 <% end %>
@@ -67,4 +67,4 @@
 <% end %>
 
 
-
+delete

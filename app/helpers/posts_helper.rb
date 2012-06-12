@@ -6,4 +6,5 @@ def markdown
 end
 
 include ActsAsTaggableOn::TagsHelper
+
 end
