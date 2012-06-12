@@ -13,7 +13,21 @@ gem 'omniauth-github'
 gem 'redcarpet'
 gem 'anjlab-bootstrap-rails', '>= 2.0', :require => 'bootstrap-rails'
 gem 'social-share-button'
+#gem 'carrierwave'
+gem 'mini_magick'
+gem 'will_paginate'
+gem 'cells'
+gem 'rails_admin'
+gem 'bootstrap'
+gem 'simple_form'
+gem 'rolify'
 
+gem 'by_star'
+gem 'wice_grid'
+
+gem 'cells'
+
+gem 'acts-as-taggable-on'
 
 gem 'carrierwave'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'

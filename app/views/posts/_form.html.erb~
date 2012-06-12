@@ -1,4 +1,5 @@
-<%= form_for(@post) do |f| %>
+<% @post.tags.build %>
+<%= form_for(@post, :html => { :multipart => true }) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -13,30 +14,18 @@
 
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name,:class=>"span10" %>
   </div>
   <div class="field">
     <%= f.label :content %><br />
-    <%= f.text_area :content %>
+    <%= f.text_area :content,:class=>"span10" %>
   </div>
-  <h3>Tags</h3>
-
-
-<%= fields_for :tags do |tag_form| %>
-  <div class="field">
-    <%= tag_form.label :name, 'Tag:' %>
-    <%= tag_form.text_field :name %>
+   <div class="field">
+    <%= f.label :tags %><br />
+    <%= f.text_field :tags,:class=>"span10" %>
   </div>
-  <% unless tag_form.object.nil? || tag_form.object.new_record? %>
-    <div class="field">
-      <%= tag_form.label :_destroy, 'Remove:' %>
-      <%= tag_form.check_box :_destroy %>
-    </div>
-  <% end %>
-<% end %>
-
-
-
+  
+ 
   <div class="actions">
     <%= f.submit %>
   </div>

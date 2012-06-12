@@ -1,0 +1,5 @@
+<h3 class="gray">Posts Tagged with <span class="label label-success"><%= params[:tag_id] %></span></h3>
+<% @posts.each do |post|%>
+<p class="tag_post"> <%= link_to post.name, post %><i class="icon-plus-sign pull-right"></i></p>
+
+<% end %>

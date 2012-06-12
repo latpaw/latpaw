@@ -1,6 +1,8 @@
 class Post < ActiveRecord::Base
-  attr_accessible :content, :name
+  attr_accessible :tag_list, :content, :name, :avatar, :avatar_cache
   
   has_many :comments, :dependent => :destroy
-
+  
+ acts_as_taggable
+ acts_as_taggable_on :skills, :interests
 end

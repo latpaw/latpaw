@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Aa</title>
+  <title>First Blog with rails</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
 <%= stylesheet_link_tag    "bootstrap", :media => "all" %>
 <%= stylesheet_link_tag    "social_share_button", :media => "all" %>
@@ -22,7 +22,7 @@
     <input type="text" class="search-query" placeholder="Search">
     </form>
     </ul>
-    <ul class="nav pull-right mtop10">
+    <ul class="nav pull-right" style="margin-top:10px;">
 <% if user_signed_in? -%>
   <%= current_user.email %>
   <%= link_to 'My info', edit_user_registration_path %>
@@ -30,9 +30,9 @@
 
 <% end -%>
 <% unless user_signed_in? -%>
-  <li><%= link_to 'Sign up', new_user_registration_path %></p></li>
+  <!--li><%= link_to 'Sign up', new_user_registration_path %></p></li-->
   <li><%= link_to 'Sign in', new_user_session_path %></p></li>
-  <li><%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %></p></li>
+  <!--li><%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %></p></li-->
 <% end -%>
 </ul>
     </div>
@@ -42,13 +42,18 @@
 <section class="body">
 <div class="container-fluid">
 <div class="row-fluid">
-<div class="span8">
+<div class="span7">
 <%= yield %>
 </div>
 
-<div class="span2">
+<div class="span3">
 
-<p>Leave blank for related or newest post</p>
+<p>
+<%= render_cell :recent, :display %>
+<% tag_cloud(@tags, %w(css1,css2,css3,css4)) do |tag,css_class| %>
+ <%= link_to tag.name, {:action=>:tag, :id=>tag.name}, :class=>css_class %>
+<% end %>
+</p>
 </div>
 </div>
 </div>

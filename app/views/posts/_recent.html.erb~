@@ -1,0 +1,10 @@
+<aside>
+<%- num = 1 %>
+<% @posts.each do |post| %>
+    <p><%= num %> . <%= link_to post.name , post %></p>
+       <%- num = num +1 %>
+<% end %>
+</aside>
+
+
+
