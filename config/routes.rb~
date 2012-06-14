@@ -1,12 +1,12 @@
 Aa::Application.routes.draw do
-  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+  ##mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   resources :posts do
     resources :comments
     resources :tags
   end
 
-  resources :tags, :module => :acts_as_taggable_on
+
 
 
   get "home/index"
