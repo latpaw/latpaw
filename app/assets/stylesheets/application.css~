@@ -12,6 +12,7 @@
  *= require_tree .
  *= require social-share-button
 */
+body{background:url(bg.png) left top repeat;}
 a:hover{background:none;text-decoration:none!important}
 .fl{float:left;margin-right:10px;}
 .fr{float:right;}
@@ -29,7 +30,7 @@ h3 a{text-decoration:none;}
 
 .body{width:1000px;margin:0 auto;}
 
-.comment-wrap{border:1px #aaa solid;border-radius:5px;min-height:100px;}
+.comment-wrap{border:1px #ccc solid;border-radius:5px;min-height:100px;}
 .comment{width:90%;margin:0 auto;border-bottom:1px #aaa dotted;margin-top:10px;}
 .comment-c{margin-left:20px;}
 section{margin-top:20px;}
@@ -45,3 +46,8 @@ body{padding:0;margin:0}
 .css2{font-size:1.2em;}
 .css3{font-size:1.4em;}
 .css4{font-size:1.6em;}
+
+.tags *{float:left;}
+.tags a{margin-left:5px;}
+a.remove_tag{z-index:1000;margin-top:-10px;}
+.clear-fix:after{content:"";clear:both;display:block;height:0;visiblity:hidden;}

@@ -13,15 +13,22 @@
   <%= raw markdown.render(@post.content) %>
 </p>
 
-<p class="gray"><i class="icon-tags"></i> : <% @post.tags.each do |tag| %>
+<p class="tags clear-fix"><i class="icon-tags pull-left"></i><span> : </span>
+<% @post.tags.each do |tag| %>
   <%= link_to(:action=>:tag,:tag_id=>tag.name) do %>
     <span class="label label-success"><%= tag.name%></span>
   <% end %>
-  <%= link_to 'X', @tag,
-               :confirm => 'Are you sure?',
-               :method => :delete %>
+  <%= link_to 'x', {
+                    :action =>"remove_tag",
+                    :id=> @post.id,
+                    :tag_id => tag.name,
+                    :confirm => 'Are you sure to delete the tag?',
+                    :controller=>'posts',
+                   }, :class=>'remove_tag'%>
 <% end %>
 
+ 
+<i class="icon-plus" onclick="getElementById('add_tag').style.display=='block'" ></i>
 
 </p>
 <% if can? :destroy, @post %>
@@ -62,7 +69,7 @@
   <%= f.text_area :body, :class=>"span6 commentbody"%>
 </div>
 <div class="actions">
-  <%= f.submit :class=>"btn btn-primary"%>
+  <%= f.submit :class=>"btn btn-info"%>
 </div>
 <% end %>
 
