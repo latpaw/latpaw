@@ -1,17 +1,18 @@
 Aa::Application.routes.draw do
   ##mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
-  resources :posts do
+   resources :posts do
     resources :comments
     resources :tags
-   
-  end
+   end
 
-  get "home/index"
+   get "home/index"
+
    match 'posts/:id/remove_tag/:tag_id'=>'posts#remove_tag'
-  match 'posts/tag/:tag_id', :to=> 'posts#tag'
+   match 'posts/:id/add_tag/'=>'posts#add_tag'
+   match 'posts/tag/:tag_id', :to=> 'posts#tag'
 
-devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
 
    root :to => 'posts#index'

@@ -28,9 +28,17 @@
 <% end %>
 
   
-<i class="icon-plus" onclick="getElementById('add_tag').style.display=='block'" ></i>
+<i class="icon-plus add_tag" onclick="if(document.getElementById('add_tag').style.display=='none'){document.getElementById('add_tag').style.display='block';}else{document.getElementById('add_tag').style.display='none';}" ></i>
 
 </p>
+
+<section id="add_tag"> 
+<%= form_tag({:action=>"add_tag",:remote=>true,:id=>@post.id,:controller=>"posts"},:method=>:put) do %>
+  <%= text_field_tag :tag_id,nil,:class=>"tag_field",:placeholder=>"Tag Name" %>
+  <%= submit_tag 'Add A Tag',:class=>'btn btn-info',:disable_with=>"Adding" %>
+<% end %>
+</section>
+
 <% if can? :destroy, @post %>
 <%= link_to 'Destroy', @post , :method=> :delete , :confirm=>"Are you sure to delete ?" %> | 
 <% end %>
@@ -58,15 +66,13 @@
 </section>
 <br />
 
-<h2>Add a comment:</h2>
+<h3>Add Comment:</h3>
 <%= form_for([@post,@post.comments.build])  do |f| %>
 <div class="field">
-  <%= f.label :commenter %>
-  <%= f.text_field :commenter ,:class=>"span6"%>
+  Commnter: <%= f.text_field :commenter ,:class=>"span6"%>
 </div>
 <div class="field">
-  <%= f.label :body%>
-  <%= f.text_area :body, :class=>"span6 commentbody"%>
+  Content: <%= f.text_area :body, :class=>"span6 commentbody"%>
 </div>
 <div class="actions">
   <%= f.submit :class=>"btn btn-info"%>

@@ -9,6 +9,13 @@ class PostsController < ApplicationController
     @posts = Post.tagged_with(params[:tag_id])
   end
   
+  def add_tag
+    @post = Post.find(params[:id])
+    @post.tag_list.add(params[:tag_id])
+    @post.save
+    redirect_to @post,:flash => {:success=>"Tags updated."}
+  end
+
   def remove_tag
     @post = Post.find(params[:id])
     @post.tag_list.remove(params[:tag_id])
