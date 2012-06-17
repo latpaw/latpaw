@@ -12,6 +12,7 @@
  *= require_tree .
  *= require social-share-button
 */
+body{background:url(bg.png) left top repeat;}
 a:hover{background:none;text-decoration:none!important}
 .fl{float:left;margin-right:10px;}
 .fr{float:right;}
@@ -45,3 +46,8 @@ body{padding:0;margin:0}
 .css2{font-size:1.2em;}
 .css3{font-size:1.4em;}
 .css4{font-size:1.6em;}
+
+.tags *{float:left;}
+.tags a{margin-left:5px;}
+a.remove_tag{z-index:1000;margin-top:-10px;margin-left:0;}
+.clear-fix:after{content:"";clear:both;display:block;height:0;visiblity:hidden;}

@@ -4,10 +4,15 @@ Aa::Application.routes.draw do
   resources :posts do
     resources :comments
     resources :tags
+   
   end
+
 
   resources :tags, :module => :acts_as_taggable_on
 
+  get "home/index"
+   match 'posts/:id/remove_tag/:tag_id'=>'posts#remove_tag'
+  match 'posts/tag/:tag_id', :to=> 'posts#tag'
 
   get "home/index"
 
