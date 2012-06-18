@@ -15,6 +15,7 @@ Aa::Application.routes.draw do
    match 'posts/:id/remove_tag/:tag_id'=>'posts#remove_tag'
    match 'posts/:id/add_tag/'=>'posts#add_tag'
    match 'posts/tag/:tag_id', :to=> 'posts#tag'
+   match 'posts/:post_id/add_reply/', :to=>'comments#add_reply'
 
   get "home/index"
    devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }

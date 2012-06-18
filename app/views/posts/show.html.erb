@@ -58,8 +58,21 @@
                :confirm => 'Are you sure?',
                :method => :delete ,
                :class=>'fr'%>
-<span><%= comment.commenter%> says : </span><br />
+<span><a href="#"><%= comment.commenter%></a> says : </span><br />
 <p class="comment-c"><%= comment.body %></p> <br />
+
+<% if comment.fromid %>
+<p class="replyshow"><span>Reply To : </span><%= reply(comment,@post) %></p> 
+<% end -%>
+
+<p class="reply"><i class="icon-share-alt pull-right" onclick="if(document.getElementById('add_reply').style.display=='none'){document.getElementById('add_reply').style.display='block';}else{document.getElementById('add_reply').style.display='none';}"></i></p>
+
+<section id="add_reply"> 
+<%= form_tag({:action=>"add_reply",:remote=>true,:comment_id=>comment.id,:post_id=>@post.id,:controller=>"comments"}) do %>
+  <%= text_area_tag :reply,nil,:class=>"tag_field",:placeholder=>"Content" %>
+  <%= submit_tag 'Reply',:class=>'btn btn-info',:disable_with=>"Adding" %>
+<% end %>
+</section>
 
 <div class="clear"></div>
 </div>
