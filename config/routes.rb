@@ -1,20 +1,23 @@
 Aa::Application.routes.draw do
   ##mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
-  resources :posts do
+   resources :posts do
     resources :comments
     resources :tags
-   
-  end
+   end
+
+   get "home/index"
 
 
   resources :tags, :module => :acts_as_taggable_on
 
   get "home/index"
    match 'posts/:id/remove_tag/:tag_id'=>'posts#remove_tag'
-  match 'posts/tag/:tag_id', :to=> 'posts#tag'
+   match 'posts/:id/add_tag/'=>'posts#add_tag'
+   match 'posts/tag/:tag_id', :to=> 'posts#tag'
 
   get "home/index"
+   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   match 'posts/tag/:tag_id', :to=> 'posts#tag'
   
