@@ -6,4 +6,10 @@ def markdown
 end
 
 include ActsAsTaggableOn::TagsHelper
+
+  def reply(comment,post)
+     fromid = comment.fromid
+     comment_from = post.comments.find(fromid) if fromid
+     comment_from.body if comment_from
+  end
 end

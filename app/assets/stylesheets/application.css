@@ -49,7 +49,7 @@ body{padding:0;margin:0}
 
 .tags *{float:left;}
 .tags a{margin-left:5px;}
-#add_tag{display:none;}
+#add_tag,#add_reply{display:none;}
 .add_tag:hover{cursor: pointer;box-shadow:0 0 8px rgba(82,168,236,0.6) inset;}
 .tag_field{margin-bottom: 0;}
 
