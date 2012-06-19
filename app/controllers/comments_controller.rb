@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
   
   def add_reply
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.create(:body=>params[:reply],:fromid=>params[:comment_id])
+    @comment = @post.comments.create(:body=>params[:reply],:fromid=>params[:comment_id],:commenter=>params[:namenil])
     redirect_to @post
   end
 end
