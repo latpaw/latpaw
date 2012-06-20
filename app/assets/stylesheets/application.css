@@ -60,3 +60,5 @@ a.remove_tag{z-index:1000;margin-top:-10px;margin-left:0;}
 .add_reply_form{display: none;}
 .replyshow{color:#124324;border-radius:3px;border:1px #efefef solid;background:#fff;padding:5px;}
 .replyshow span{color: #468847;}
+
+.replyform{display: none}
