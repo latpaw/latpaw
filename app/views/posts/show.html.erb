@@ -9,10 +9,13 @@
   <h1> <%= @post.name %></h1>
   <p><%= social_share_button_tag(@post.name) %></p>
   <%=h time_tag @post.created_at ,:class=>"gray"%>
-  
+ <% unless @post.video.url.nil? %>
+  <video src="<%= @post.video.url %>" controls="controls" class="span12">not support mp4</video>  
+ <% end %>
 <p>
   <%= raw markdown.render(@post.content) %>
 </p>
+
 
 <p class="tags clear-fix"><i class="icon-tags pull-left"></i><span> : </span>
 <% @post.tags.each do |tag| %>
