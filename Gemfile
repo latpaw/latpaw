@@ -13,7 +13,7 @@ gem 'omniauth-github'
 gem 'redcarpet'
 gem 'anjlab-bootstrap-rails', '>= 2.0', :require => 'bootstrap-rails'
 gem 'social-share-button'
-#gem 'carrierwave'
+gem 'carrierwave'
 gem 'mini_magick'
 gem 'will_paginate'
 gem 'cells'
@@ -30,9 +30,6 @@ gem 'cells'
 gem 'acts-as-taggable-on'
 
 gem 'carrierwave'
-gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
-gem 'carrierwave-upyun'
-gem 'mini_magick',:require => false
 
 # Gems used only for assets and not required
 # in production environments by default.
