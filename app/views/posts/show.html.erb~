@@ -1,3 +1,4 @@
+<%- e_mail = current_user.email rescue nil %>
 <% unless notice.nil? %>
 <p id="notice" class="alert alert-info">
 <a class="close" data-dismiss="alert">×</a>
@@ -18,11 +19,6 @@
   <%= link_to(:action=>:tag,:tag_id=>tag.name) do %>
     <span class="label label-success"><%= tag.name%></span>
   <% end %>
-
- <%= link_to 'X', tag_path,
-               :confirm => 'Are you sure?',
-               :method => :delete %>
-
   <%= link_to 'x', {
                     :action =>"remove_tag",
                     :id=> @post.id,
@@ -34,9 +30,17 @@
 <% end %>
 
   
-<i class="icon-plus" onclick="getElementById('add_tag').style.display=='block'" ></i>
+<i class="icon-plus add_tag" onclick="if(document.getElementById('add_tag').style.display=='none'){document.getElementById('add_tag').style.display='block';}else{document.getElementById('add_tag').style.display='none';}" ></i>
 
 </p>
+
+<section id="add_tag"> 
+<%= form_tag({:action=>"add_tag",:remote=>true,:id=>@post.id,:controller=>"posts"},:method=>:put) do %>
+  <%= text_field_tag :tag_id,nil,:class=>"tag_field",:placeholder=>"Tag Name" %>
+  <%= submit_tag 'Add A Tag',:class=>'btn btn-info',:disable_with=>"Adding" %>
+<% end %>
+</section>
+
 <% if can? :destroy, @post %>
 <%= link_to 'Destroy', @post , :method=> :delete , :confirm=>"Are you sure to delete ?" %> | 
 <% end %>
@@ -55,8 +59,21 @@
                :confirm => 'Are you sure?',
                :method => :delete ,
                :class=>'fr'%>
-<span><%= comment.commenter%> says : </span><br />
+<span><a href="#"><%= comment.commenter%></a> says : </span><br />
 <p class="comment-c"><%= comment.body %></p> <br />
+
+<% if comment.fromid %>
+<p class="replyshow"><span>Reply To : @</span><%= reply(comment,@post) %></p> 
+<% end -%>
+
+<p class="reply"><i class="icon-share-alt pull-right" onclick="if(document.getElementById('add_reply-<%= comment.id%>').style.display=='none'){document.getElementById('add_reply-<%= comment.id%>').style.display='block';}else{document.getElementById('add_reply-<%= comment.id%>').style.display='none';}"></i></p>
+
+<section id="add_reply_<%= comment.id%>" class="replyform"> 
+<%= form_tag({:action=>"add_reply",:remote=>true,:comment_id=>comment.id,:post_id=>@post.id,:controller=>"comments",:namenil=>e_mail }) do %>
+  <%= text_area_tag :reply,nil,:class=>"tag_field",:placeholder=>"Content" %>
+  <%= submit_tag 'Reply',:class=>'btn btn-info',:disable_with=>"Adding" %>
+<% end %>
+</section>
 
 <div class="clear"></div>
 </div>
@@ -64,20 +81,15 @@
 </section>
 <br />
 
-<h2>Add a comment:</h2>
+<h3>Add Comment:</h3>
 <%= form_for([@post,@post.comments.build])  do |f| %>
 <div class="field">
-  <%= f.label :commenter %>
-  <%= f.text_field :commenter ,:class=>"span6"%>
+  Commnter: <%= f.text_field :commenter ,:class=>"span6"%>
 </div>
 <div class="field">
-  <%= f.label :body%>
-  <%= f.text_area :body, :class=>"span6 commentbody"%>
+  Content: <%= f.text_area :body, :class=>"span6 commentbody"%>
 </div>
 <div class="actions">
   <%= f.submit :class=>"btn btn-info"%>
 </div>
 <% end %>
-
-
-delete
