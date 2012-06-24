@@ -12,4 +12,11 @@ include ActsAsTaggableOn::TagsHelper
      comment_from = post.comments.find(fromid) rescue nil if fromid
      comment_from.commenter if comment_from
   end
+
+  require "mime/types"
+   def image_or_video(path)
+      type = MIME::Types.type_for(path)
+      return "image" if type.index("image")
+      return "video" if type.index("video")
+   end
 end
