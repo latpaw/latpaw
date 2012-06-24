@@ -45,7 +45,7 @@ class PostsController < ApplicationController
   def show
     @postss = Post.all
     @post = Post.find(params[:id])
-
+    @user = User.find(@post.userid) rescue User.first
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @post }

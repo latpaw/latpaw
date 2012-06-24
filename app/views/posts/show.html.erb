@@ -8,9 +8,18 @@
 <p><%= link_to "Home", :root %> / <%= link_to "Posts", posts_path %> / <%= @post.name %></p>
   <h1> <%= @post.name %></h1>
   <p><%= social_share_button_tag(@post.name) %></p>
-  <%=h time_tag @post.created_at ,:class=>"gray"%>
+  <%=h time_tag @post.created_at ,:class=>"gray"%> 
+  <%= link_to ". By "+@user.email, "/users/edit", :class=>"gray"%>
  <% unless @post.video.url.nil? %>
-  <video src="<%= @post.video.url %>" controls="controls" class="span12">not support mp4</video>  
+   <% if MIME::Types.type_for(@post.video.path).to_s.index("video") %>
+     <p><video src="<%= @post.video.url %>" controls="controls" class="span12">not support mp4</video></p>
+   <% end %>
+   <% if MIME::Types.type_for(@post.video.path).to_s.index("image") %>
+     <p><%= link_to(@post.video.url) do %><img src="<%= @post.video.url %>" />  
+        <% end %>
+     </p>
+   <% end %>
+   
  <% end %>
 <p>
   <%= raw markdown.render(@post.content) %>
