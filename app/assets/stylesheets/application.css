@@ -49,16 +49,19 @@ body{padding:0;margin:0}
 
 .tags *{float:left;}
 .tags a{margin-left:5px;}
-#add_tag,#add_reply{display:none;}
+#add_tag{display:none;}
 .add_tag:hover{cursor: pointer;box-shadow:0 0 8px rgba(82,168,236,0.6) inset;}
 .tag_field{margin-bottom: 0;}
 
 a.remove_tag{z-index:1000;margin-top:-10px;margin-left:0;}
 .clear-fix:after{content:"";clear:both;display:block;height:0;visiblity:hidden;}
 
+
+.add_reply_form{display: none;}
 .replyshow{color:#124324;border-radius:3px;border:1px #efefef solid;background:#fff;padding:5px;}
 .replyshow span{color: #468847;}
 
 .replyform{display: none}
 
 video{margin:0;padding:0;margin-bottom:10px;}
+

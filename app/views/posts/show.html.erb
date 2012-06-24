@@ -8,7 +8,8 @@
 <p><%= link_to "Home", :root %> / <%= link_to "Posts", posts_path %> / <%= @post.name %></p>
   <h1> <%= @post.name %></h1>
   <p><%= social_share_button_tag(@post.name) %></p>
-  <%=h time_tag @post.created_at ,:class=>"gray"%>
+  <%=h time_tag @post.created_at ,:class=>"gray"%> 
+  <%= link_to ". By "+@user.email, "/users/edit", :class=>"gray"%>
  <% unless @post.video.url.nil? %>
   <video src="<%= @post.video.url %>" controls="controls" class="span12">not support mp4</video>  
  <% end %>
@@ -66,12 +67,12 @@
 <p class="comment-c"><%= comment.body %></p> <br />
 
 <% if comment.fromid %>
-<p class="replyshow"><span>Reply To : </span><%= reply(comment,@post) %></p> 
+<p class="replyshow"><span>Reply To : @</span><%= reply(comment,@post) %></p> 
 <% end -%>
 
-<p class="reply"><i class="icon-share-alt pull-right" onclick="if(document.getElementById('add_reply_<%= comment.id%>').style.display=='none'){document.getElementById('add_reply_<%= comment.id%>').style.display='block';}else{document.getElementById('add_reply_<%= comment.id%>').style.display='none';}"></i></p>
+<p class="reply"><i class="icon-share-alt pull-right" onclick="if(document.getElementById('add_reply-<%= comment.id%>').style.display=='none'){document.getElementById('add_reply-<%= comment.id%>').style.display='block';}else{document.getElementById('add_reply-<%= comment.id%>').style.display='none';}"></i></p>
 
-<section id="add_reply_<%= comment.id%>" class="replyform"> 
+<section id="add_reply-<%= comment.id%>" class="replyform"> 
 <%= form_tag({:action=>"add_reply",:remote=>true,:comment_id=>comment.id,:post_id=>@post.id,:controller=>"comments",:namenil=>e_mail }) do %>
   <%= text_area_tag :reply,nil,:class=>"tag_field",:placeholder=>"Content" %>
   <%= submit_tag 'Reply',:class=>'btn btn-info',:disable_with=>"Adding" %>
