@@ -10,6 +10,7 @@
   <p><%= social_share_button_tag(@post.name) %></p>
   <%=h time_tag @post.created_at ,:class=>"gray"%> 
   <%= link_to ". By "+@user.email, "/users/edit", :class=>"gray"%>
+ 
  <% unless @post.video.url.nil? %>
    <% if MIME::Types.type_for(@post.video.path).to_s.index("video") %>
      <p><video src="<%= @post.video.url %>" controls="controls" class="span12">not support mp4</video></p>
@@ -19,8 +20,8 @@
         <% end %>
      </p>
    <% end %>
-   
  <% end %>
+
 <p>
   <%= raw markdown.render(@post.content) %>
 </p>
