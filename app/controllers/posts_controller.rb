@@ -31,7 +31,7 @@ class PostsController < ApplicationController
 
   def index
     @postss = Post.all
-    @posts = Post.paginate(:page=>params[:page],:per_page=>10)
+    @posts = Post.paginate(:page=>params[:page],:per_page=>10).order('created_at DESC')
     
 
     respond_to do |format|
