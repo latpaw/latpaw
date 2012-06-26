@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120621040722) do
+ActiveRecord::Schema.define(:version => 20120625040722) do
 
   create_table "comments", :force => true do |t|
     t.string   "commenter"
@@ -27,11 +27,15 @@ ActiveRecord::Schema.define(:version => 20120621040722) do
   create_table "posts", :force => true do |t|
     t.string   "name"
     t.text     "content"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
     t.string   "avatar"
     t.integer  "userid"
     t.string   "video"
+    t.string   "video2_file_name"
+    t.string   "video2_content_type"
+    t.integer  "video2_file_size"
+    t.datetime "video2_updated_at"
   end
 
   create_table "rails_admin_histories", :force => true do |t|
