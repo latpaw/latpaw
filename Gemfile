@@ -44,8 +44,8 @@ end
 
 gem 'jquery-rails'
 
-#gem 'paperclip'
-#gem 'paperclip-ffmpeg'
+gem 'paperclip'
+gem 'paperclip-ffmpeg'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

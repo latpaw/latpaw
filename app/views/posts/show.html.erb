@@ -11,15 +11,15 @@
   <%=h time_tag @post.created_at ,:class=>"gray"%> 
   <%= link_to ". By "+@user.email, "/users/edit", :class=>"gray"%>
  
- <% unless @post.video.url.nil? %>
-   <% if MIME::Types.type_for(@post.video.path).to_s.index("video") %>
-     <p><video src="<%= @post.video.url %>" controls="controls" class="span12">not support mp4</video></p>
-   <% end %>
-   <% if MIME::Types.type_for(@post.video.path).to_s.index("image") %>
-     <p><%= link_to(@post.video.url) do %><img src="<%= @post.video.url %>" />  
+ <% unless @post.video2.url.nil? %>
+   <% #if MIME::Types.type_for(@post.video2.path).to_s.index("video2") %>
+     <p><video src="<%= @post.video2.url(:medium) %>" controls="controls" class="span12">not support mp4</video></p>
+   <% #end %>
+   <% #if MIME::Types.type_for(@post.video2.path).to_s.index("image") %>
+     <p><%= link_to(@post.video2.url) do %><img src="<%= @post.video2.url(:thumb) %>" />  
         <% end %>
      </p>
-   <% end %>
+   <% #end %>
  <% end %>
 
 <p>
