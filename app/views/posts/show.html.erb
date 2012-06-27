@@ -12,7 +12,7 @@
   <%= link_to ". By "+@user.email, "/users/edit", :class=>"gray"%>
  
  <% unless @post.video2.url.nil? %>
-   <% #if MIME::Types.type_for(@post.video2.path).to_s.index("video2") %>
+   <% # if MIME::Types.type_for(@post.video2.path).to_s.index("video2") %>
      <p><video src="<%= @post.video2.url(:medium) %>" controls="controls" class="span12">not support mp4</video></p>
    <% #end %>
    <% #if MIME::Types.type_for(@post.video2.path).to_s.index("image") %>
