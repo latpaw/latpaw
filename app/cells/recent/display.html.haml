@@ -1,8 +1,8 @@
-%h3
+%h3.recentitle
   Recent Posts
-%section
+%div
   -@posts.each do |post|
     %p
-      %i.icon-play
+      %i.icon-adjust
       = link_to post.name , post
 

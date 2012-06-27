@@ -11,15 +11,18 @@
   <%=h time_tag @post.created_at ,:class=>"gray"%> 
   <%= link_to ". By "+@user.email, "/users/edit", :class=>"gray"%>
  
- <% unless @post.video2.url.nil? %>
-   <% #if MIME::Types.type_for(@post.video2.path).to_s.index("video2") %>
-     <p><video src="<%= @post.video2.url(:medium) %>" controls="controls" class="span12">not support mp4</video></p>
-   <% #end %>
-   <% #if MIME::Types.type_for(@post.video2.path).to_s.index("image") %>
-     <p><%= link_to(@post.video2.url) do %><img src="<%= @post.video2.url(:thumb) %>" />  
+ <% unless @post.video2.to_s.empty? %>
+   <% if MIME::Types.type_for(@post.video2.path).to_s.index("video") %>
+   <p>The video type is <%= MIME::Types.type_for(@post.video2.path).to_s %>. You can try firefox or some nagvator.</p>
+     <p><video src="<%= @post.video2.url %>" controls="controls" class="span12" id="video" >not support mp4</video></p>
+     <p class="btn btn-info wideview">Wide View</p>
+     <p class="btn btn-info normalview">Normal View</p>
+   <% end %>
+   <% if MIME::Types.type_for(@post.video2.path).to_s.index("image") %>
+     <p><%= link_to(@post.video2.url) do %><img src="<%= @post.video2.url %>" />  
         <% end %>
      </p>
-   <% #end %>
+   <% end %>
  <% end %>
 
 <p>
@@ -63,16 +66,15 @@
 <%= link_to 'Back', posts_path %>
 <br /><br />
 
-<h2>Comments:</h2>
 <section class="comment-wrap">
-<p class="label label-info"><%= @post.comments.count.to_s %> comments has been submitted.</p>
+<p class="label label-info commcount"><%= @post.comments.count.to_s %> comments has been submitted.</p>
 <% @post.comments.each do |comment| %>
 <div class="comment">
   <%= link_to 'X', [comment.post, comment],
                :confirm => 'Are you sure?',
                :method => :delete ,
                :class=>'fr'%>
-<span><a href="#"><%= comment.commenter%></a> says : </span><br />
+<span><a href="#"><%= comment.commenter%></a> &bull; <%= time_ago_in_words(comment.created_at) %> ago</span><br />
 <p class="comment-c"><%= comment.body %></p> <br />
 
 <% if comment.fromid %>
@@ -83,7 +85,7 @@
 
 <section id="add_reply-<%= comment.id%>" class="replyform"> 
 <%= form_tag({:action=>"add_reply",:remote=>true,:comment_id=>comment.id,:post_id=>@post.id,:controller=>"comments",:namenil=>e_mail }) do %>
-  <%= text_area_tag :reply,nil,:class=>"tag_field",:placeholder=>"Content" %>
+  <%= text_area_tag :reply,nil,:class=>"tag_field",:placeholder=>"Reply Content" %>
   <%= submit_tag 'Reply',:class=>'btn btn-info',:disable_with=>"Adding" %>
 <% end %>
 </section>
@@ -94,13 +96,12 @@
 </section>
 <br />
 
-<h3>Add Comment:</h3>
 <%= form_for([@post,@post.comments.build])  do |f| %>
 <div class="field">
-  Commnter: <%= f.text_field :commenter ,:class=>"span6"%>
+  <%= f.text_field :commenter ,:class=>"span12",:placeholder=>"Nicky Name"%>
 </div>
 <div class="field">
-  Content: <%= f.text_area :body, :class=>"span6 commentbody"%>
+  <%= f.text_area :body, :class=>"span12 commentbody", :placeholder=>"New Comment here"%>
 </div>
 <div class="actions">
   <%= f.submit :class=>"btn btn-info"%>
