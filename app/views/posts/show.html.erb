@@ -9,15 +9,15 @@
   <h1> <%= @post.name %></h1>
   <p><%= social_share_button_tag(@post.name) %></p>
   <%=h time_tag @post.created_at ,:class=>"gray"%> 
-  <%= link_to ". By "+@user.email, "/users/edit", :class=>"gray"%>
+  <%= link_to ". By "+@user.email, "/users/#{@user.id}", :class=>"gray"%>
  
 
  <% unless @post.video2.to_s.empty? %>
    <% if MIME::Types.type_for(@post.video2.path).to_s.index("video") %>
    <p>The video type is <%= MIME::Types.type_for(@post.video2.path).to_s %>. You can try firefox or some nagvator.</p>
+     <div id="overlay"></div>
      <p><video src="<%= @post.video2.url %>" controls="controls" class="span12" id="video" >not support mp4</video></p>
      <p class="btn btn-info wideview">Wide View</p>
-     <p class="btn btn-info normalview">Normal View</p>
    <% end %>
    <% if MIME::Types.type_for(@post.video2.path).to_s.index("image") %>
      <p><%= link_to(@post.video2.url) do %><img src="<%= @post.video2.url %>" />  

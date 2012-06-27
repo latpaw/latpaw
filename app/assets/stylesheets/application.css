@@ -70,3 +70,7 @@ video{margin:0;padding:0;margin-bottom:10px;}
 .recentitle{color:#aaa;font-size:15px;margin-bottom:20px;height:30px;text-align: center;border-bottom: 1px #ccc solid;}
 
 .rightside p{margin-left:10px;}
+
+#overlay{display:none;opacity:0;}
+
+#video{width: 551px;}

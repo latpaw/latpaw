@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20120627045527) do
     t.datetime "updated_at",          :null => false
     t.string   "avatar"
     t.integer  "userid"
+    t.string   "video"
     t.string   "video2_file_name"
     t.string   "video2_content_type"
     t.integer  "video2_file_size"
