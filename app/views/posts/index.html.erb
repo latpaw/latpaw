@@ -7,6 +7,7 @@
     <p class="gray"><%= time_tag post.created_at %></p>
     <%  abc = truncate(post.content,:length=>200) %>
     <p><%= raw markdown.render(abc) %></p>
+    <p><%= link_to "Watch the video", post.video2.url,:class=>"btn btn-info" %></p>
   </section>
 <% end %>
 </article>

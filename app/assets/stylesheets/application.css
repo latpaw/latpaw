@@ -30,7 +30,7 @@ h3 a{text-decoration:none;}
 
 .body{width:1000px;margin:0 auto;}
 
-.comment-wrap{border:1px #ccc solid;border-radius:5px;min-height:100px;}
+.comment-wrap{border:1px #ccc solid;background: #eee;border-radius:5px;min-height:100px;box-shadow: 0 1px 2px rgba(0,0,0,0.15);padding-top:1px;}
 .comment{width:90%;margin:0 auto;border-bottom:1px #aaa dotted;margin-top:10px;}
 .comment-c{margin-left:20px;}
 section{margin-top:20px;}
@@ -51,7 +51,7 @@ body{padding:0;margin:0}
 .tags a{margin-left:5px;}
 #add_tag{display:none;}
 .add_tag:hover{cursor: pointer;box-shadow:0 0 8px rgba(82,168,236,0.6) inset;}
-.tag_field{margin-bottom: 0;}
+.tag_field{margin-bottom: 0;height:17px;}
 
 a.remove_tag{z-index:1000;margin-top:-10px;margin-left:0;}
 .clear-fix:after{content:"";clear:both;display:block;height:0;visiblity:hidden;}
@@ -65,3 +65,8 @@ a.remove_tag{z-index:1000;margin-top:-10px;margin-left:0;}
 
 video{margin:0;padding:0;margin-bottom:10px;}
 
+.rightside section{border-radius:6px;padding-bottom:20px;box-shadow:0 1px 2px rgba(0,0,0,0.15);background: #fff;}
+
+.recentitle{color:#aaa;font-size:15px;margin-bottom:20px;height:30px;text-align: center;border-bottom: 1px #ccc solid;}
+
+.rightside p{margin-left:10px;}
