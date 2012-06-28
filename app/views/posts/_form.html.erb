@@ -28,9 +28,12 @@
     <%= f.hidden_field :userid,:class=>"span10",:value=>current_user.id %>
   </div>
   <div class="field">
-    <%= f.file_field :video2,:class=>"span10" %>
+    WEBM:<%= f.file_field :video2,:class=>"span10" %>
   </div>
-  
+  <div class="field">
+    MP4:<%= f.file_field :file2,:class=>"span10" %>
+  </div>
+
  
   <div class="actions">
     <%= f.submit %>

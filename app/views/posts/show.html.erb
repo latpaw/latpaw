@@ -11,12 +11,14 @@
   <%=h time_tag @post.created_at ,:class=>"gray"%> 
   <%= link_to ". By "+@user.email, "/users/#{@user.id}", :class=>"gray"%>
  
-
  <% unless @post.video2.to_s.empty? %>
    <% if MIME::Types.type_for(@post.video2.path).to_s.index("video") %>
-   <p>The video type is <%= MIME::Types.type_for(@post.video2.path).to_s %>. You can try firefox or some nagvator.</p>
+   <p> </p>
      <div id="overlay"></div>
-     <p><video src="<%= @post.video2.url %>" controls="controls" class="span12" id="video" >not support mp4</video></p>
+     <p><video controls="controls" class="span12" id="video" >
+      <source src="<%= @post.video2.url %>" />
+      <source src="<%= @post.video2.url.gsub(/webm/,"mp4") %>" />
+     </video></p>
      <p class="btn btn-info wideview">Wide View</p>
    <% end %>
    <% if MIME::Types.type_for(@post.video2.path).to_s.index("image") %>

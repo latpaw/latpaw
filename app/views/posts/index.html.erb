@@ -1,13 +1,21 @@
-<h1>All Posts</h1>
+<p><%= link_to "Home", :root %> / <%= link_to "Posts", posts_path %> / <span class="gray">All Posts</span></p>
 <article>
 
 <% @posts.each do |post| %>
-  <section>
+  <section class="articles">
     <h3><%= link_to post.name , post %></h3>
     <p class="gray"><%= time_tag post.created_at %></p>
     <%  abc = truncate(post.content,:length=>200) %>
     <p><%= raw markdown.render(abc) %></p>
-    <p><%= link_to "Watch the video", post.video2.url,:class=>"btn btn-info" %></p>
+    <% unless post.video2.to_s.empty? %>
+     <p>
+    <% if request.env["HTTP_USER_AGENT"].index("IE") %>
+     <%= link_to "Watch the video", post.video2.url.gsub(/webm/,"mp4"),:class=>"btn btn-info" %>
+    <% else %>
+     <%= link_to "Watch the video", post.video2.url,:class=>"btn btn-info" %>
+    <% end %>
+    </p>
+    <% end %>
   </section>
 <% end %>
 </article>

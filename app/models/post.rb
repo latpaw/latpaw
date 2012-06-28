@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :tag_list, :content, :name, :video2, :userid
+  attr_accessible :tag_list, :content, :name, :video2, :userid, :file2
 
   has_many :comments, :dependent => :destroy
   
@@ -8,12 +8,11 @@ class Post < ActiveRecord::Base
 
  #mount_uploader :video, VideoUploader
 
- has_attached_file :video2, :default_url => "" #, :styles => {
+ has_attached_file :video2, :url =>"/system/:class/video2s/:id/:style_:filename", :default_url => "" #, :styles => {
  	#:medium => {:geometry =>"640x480",:format=>"webm"},
  	#:thumb => {:geometry =>"100x100",:format=>"jpg",:time=>10}
  #},:processors =>[:ffmpeg]
-
-
+ has_attached_file :file2, :url =>"/system/:class/video2s/:id/:style_:filename"
 
 #### transcode after the video was uploaded
     #after_save :convert_in_webm

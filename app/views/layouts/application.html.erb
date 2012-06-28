@@ -12,32 +12,25 @@
     <header class="navbar">
     <div class="navbar-inner">
     <div class="container">
-<ul class="nav pull-left">
-        <%= link_to "Emerson Project", root_url, :class=>"brand" %>
+ <ul class="nav pull-left">
+  <%= link_to "Emerson Project", root_url, :class=>"brand" %>
 	<li class="active"><%= link_to "Post", posts_path %></li>
-	<li><%= link_to "Google", "http://www.google.com" %></li>
-	<li><%= link_to "Ruby CHina", "http://ruby-china.org" %></li>
-	<li><%= link_to "Something", "ss" %></li>
-    <form class="navbar-search pull-left">
-    <input type="text" class="search-query" placeholder="Search">
-    </form>
-    </ul>
-    <ul class="nav pull-right" style="margin-top:10px;">
-<% if can? :create, Post %>
-<%= link_to 'New Post', new_post_path %>
-<% end %>
-<% if user_signed_in? -%>
-  <%= current_user.email %>
-  <%= link_to 'My info', edit_user_registration_path %>
-  <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
-
-<% end -%>
-<% unless user_signed_in? -%>
+ </ul>
+ <ul class="nav pull-right" style="margin-top:10px;">
+  <% if can? :create, Post %>
+   <%= link_to 'New Post', new_post_path %>
+  <% end %>
+  <% if user_signed_in? -%>
+   <%= current_user.email %>
+   <%= link_to 'My info', edit_user_registration_path %>
+   <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+  <% end -%>
+  <% unless user_signed_in? -%>
   <!--li><%= link_to 'Sign up', new_user_registration_path %></p></li-->
   <li><%= link_to 'Sign in', new_user_session_path %></p></li>
   <!--li><%= link_to "Sign in with Github", user_omniauth_authorize_path(:github) %></p></li-->
-<% end -%>
-</ul>
+  <% end -%>
+ </ul>
     </div>
     </div>
     </header>
@@ -56,6 +49,9 @@
    </section>
    <section>
    <%= render_cell :tagcloud, :tagcloud %>
+   </section>
+   <section>
+     <iframe width="300" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=300&height=600&fansRow=2&ptype=1&speed=0&skin=5&isTitle=0&noborder=0&isWeibo=1&isFans=1&uid=1886512401&verifier=6e85d973&dpc=1"></iframe>
    </section>
 </div>
 </div>

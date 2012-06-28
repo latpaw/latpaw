@@ -23,8 +23,10 @@ a:hover{background:none;text-decoration:none!important}
 
 nav{width:100%;min-width:960px}
 nav li{float:left;margin-left:20px;list-style:none;}
+.navbar-inner{}
 
 h3 a{text-decoration:none;}
+.articles{border-bottom: 1px #aaa solid;}
 .sed{border:1px #aaa solid;padding:5px;border-radius:5px;display:inline}
 .sed:hover{border:1px rgba(82,168,236,0.6) solid;box-shadow:0 1px 1px rgba(0,0,0,0.075) inset, 0 0 8px rgba(82,168,236,0.6);}
 
@@ -74,3 +76,5 @@ video{margin:0;padding:0;margin-bottom:10px;}
 #overlay{display:none;opacity:0;}
 
 #video{width: 551px;}
+
+.share_self{margin-top:10px;}

@@ -13,6 +13,7 @@ $(document).ready ->
      o.css "top","0"
      o.css "width",width
      o.css "height",height
+     o.css "opacity","0"
      o.css "background","#000"
      o.animate
        opacity:0.5
@@ -24,9 +25,12 @@ $(document).ready ->
      v.css "z-index","2000"
      v.css "left","10%"
      v.css "top", position
+     v.css "opacity","0"
+     v.css "width","1000"
      v.animate
-       width:1000
-     , 500, ->
+       opacity:1
+       #width:1000
+     , 1000, ->
 
   $('#overlay').click () ->
      $('#overlay').css "display","none"
@@ -36,3 +40,4 @@ $(document).ready ->
      $('#video').animate
        width:551
      , 1000, ->
+
