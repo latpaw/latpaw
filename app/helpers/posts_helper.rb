@@ -7,7 +7,7 @@ end
 
 include ActsAsTaggableOn::TagsHelper
 
-  def reply(comment,post)
+  def reply_to(comment,post)
      fromid = comment.fromid
      comment_from = post.comments.find(fromid) rescue nil if fromid
      comment_from.commenter if comment_from

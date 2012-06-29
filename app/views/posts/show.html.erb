@@ -1,3 +1,6 @@
+<%= content_for :title do %>
+ <%= @post.name %>
+<% end %>
 <%- e_mail = current_user.email rescue nil %>
 <% unless notice.nil? %>
 <p id="notice" class="alert alert-info">
@@ -68,6 +71,7 @@
 <% end %>
 <%= link_to 'Back', posts_path %>
 <br /><br />
+<p><%= link_to "Pre Post", @postpre %> | <%= link_to "Next Post", @postnext %></p>
 
 <section class="comment-wrap">
 <p class="label label-info commcount"><%= @post.comments.count.to_s %> comments has been submitted.</p>
@@ -77,12 +81,21 @@
                :confirm => 'Are you sure?',
                :method => :delete ,
                :class=>'fr'%>
-<span><a href="#"><%= comment.commenter%></a> &bull; <%= time_ago_in_words(comment.created_at) %> ago</span><br />
-<p class="comment-c"><%= comment.body %></p> <br />
+<span><a href="#"><%= comment.commenter%></a></span><span class="gray"> &bull; <%= time_ago_in_words(comment.created_at) %> ago</span><br />
 
-<% if comment.fromid %>
-<p class="replyshow"><span>Reply To : @</span><%= reply(comment,@post) %></p> 
-<% end -%>
+  <% if comment.fromid %>
+  <p class="replyshow alert alert-info">
+    <span>Reply To :
+      <%= link_to "#" do %>
+        @<%= reply_to(comment,@post) %>
+      <% end %>
+    </span>
+   <%= @post.comments.find(comment.fromid).body %>
+  </p> 
+  <% end -%>
+  <p class="comment-c"><%= comment.body %></p> 
+
+
 
 <p class="reply"><i class="icon-share-alt pull-right" onclick="if(document.getElementById('add_reply-<%= comment.id%>').style.display=='none'){document.getElementById('add_reply-<%= comment.id%>').style.display='block';}else{document.getElementById('add_reply-<%= comment.id%>').style.display='none';}"></i></p>
 

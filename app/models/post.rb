@@ -22,5 +22,6 @@ class Post < ActiveRecord::Base
       # system("/usr/bin/ffmpeg -i #{video2.path} -s 480x360 #{webm}")
       # update_attribute(:video2_file_name,"#{id}_convert.webm")
     #end
-
+ 
+  ###permalink :title, :to_param => "#{:name}"
 end

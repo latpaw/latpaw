@@ -34,7 +34,7 @@ h3 a{text-decoration:none;}
 
 .comment-wrap{border:1px #ccc solid;background: #eee;border-radius:5px;min-height:100px;box-shadow: 0 1px 2px rgba(0,0,0,0.15);padding-top:1px;}
 .comment{width:90%;margin:0 auto;border-bottom:1px #aaa dotted;margin-top:10px;}
-.comment-c{margin-left:20px;}
+.comment-c{margin-left:20px;margin-top:5px;}
 section{margin-top:20px;}
 
 .tag_post{padding:10px;margin:0;}
@@ -60,7 +60,7 @@ a.remove_tag{z-index:1000;margin-top:-10px;margin-left:0;}
 
 
 .add_reply_form{display: none;}
-.replyshow{color:#124324;border-radius:3px;border:1px #efefef solid;background:#fff;padding:5px;}
+.replyshow{color:#aaa;margin-top:5px;padding:10px;}
 .replyshow span{color: #468847;}
 
 .replyform{display: none}
@@ -78,3 +78,12 @@ video{margin:0;padding:0;margin-bottom:10px;}
 #video{width: 551px;}
 
 .share_self{margin-top:10px;}
+
+.pagination{padding-top: 18px;padding-left: 18px;margin-bottom:10px!important; }
+
+.digg_pagination a:hover{border:1px #ddd solid!important;box-shadow:0 1px 1px rgba(0,0,0,0.075) inset, 0 0 8px rgba(82,168,236,0.9);}
+
+.rightside h3{border-top-right-radius: 6px;border-top-left-radius: 6px;}
+
+h1{}
+h1:hover{-moz-transition:all 1s ease-in-out;-moz-transform:scale(1.1);-webkit-transition:all 1s ease-in-out;-webkit-transform:scale(1.1);}

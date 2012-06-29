@@ -4,7 +4,6 @@ class PostsController < ApplicationController
  load_and_authorize_resource
   skip_authorize_resource :only=> :tag
 
-
   def tag
     @posts = Post.tagged_with(params[:tag_id])
   end
@@ -46,6 +45,8 @@ class PostsController < ApplicationController
     @postss = Post.all
     @post = Post.find(params[:id])
     @user = User.find(@post.userid) rescue User.first
+    @postnext = Post.find(params[:id].succ) rescue nil
+    @postpre = Post.find(params[:id].pre) rescue nil
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @post }
