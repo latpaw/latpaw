@@ -87,3 +87,6 @@ video{margin:0;padding:0;margin-bottom:10px;}
 
 h1{}
 h1:hover{-moz-transition:all 1s ease-in-out;-moz-transform:scale(1.1);-webkit-transition:all 1s ease-in-out;-webkit-transform:scale(1.1);}
+
+p:hover i{-moz-transform:rotate(180deg);-webkit-transform:rotate(180deg);}
+i{-moz-transition:all 0.5s ease-in-out;-webkit-transition:all 0.5s ease-in-out;}

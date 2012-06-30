@@ -46,7 +46,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @user = User.find(@post.userid) rescue User.first
     @postnext = Post.find(params[:id].succ) rescue nil
-    @postpre = Post.find(params[:id].pre) rescue nil
+    @postpre = Post.find(params[:id]) rescue nil
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @post }
