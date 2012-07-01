@@ -1,5 +1,7 @@
 module PostsHelper
 
+
+
 def markdown 
   Redcarpet::Markdown.new(Redcarpet::Render::HTML,
     :autolink => true, :space_after_headers => true)
@@ -19,4 +21,7 @@ include ActsAsTaggableOn::TagsHelper
       return "image" if type.index("image")
       return "video" if type.index("video")
    end
+ 
+
+
 end

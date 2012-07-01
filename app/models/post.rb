@@ -24,4 +24,6 @@ class Post < ActiveRecord::Base
     #end
  
   ###permalink :title, :to_param => "#{:name}"
+
+
 end

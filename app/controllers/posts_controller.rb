@@ -45,13 +45,18 @@ class PostsController < ApplicationController
     @postss = Post.all
     @post = Post.find(params[:id])
     @user = User.find(@post.userid) rescue User.first
-    @postnext = Post.find(params[:id].succ) rescue nil
-    @postpre = Post.find(params[:id]) rescue nil
+    @postnext = @post.next
+    @prepost = prepost(@post) unless @post.id == 1
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @post }
     end
   end
+
+ def prepost(pst)
+   (1..100).map {|i| return prepost = Post.find(pst.id - i) if Post.exists?(pst.id - i)}
+ end
+
 
   # GET /posts/new
   # GET /posts/new.json
