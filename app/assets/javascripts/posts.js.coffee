@@ -41,3 +41,14 @@ $(document).ready ->
        width:551
      , 1000, ->
 
+  $('a.css2,a.css1,a.css3,a.css4').hover (->
+     @id = "activetag"
+     aa = $("#activetag")
+     wid = aa.css("width")
+     aa.css "font-size","26px"
+     aa.css "width", wid
+     aa.css "box-shadow","0 1px 2px rgba(0,0,0,1)"
+     ), ->
+     $("#activetag").css "box-shadow","none"
+     $("#activetag").css "font-size","1.2em"
+     @id = ""

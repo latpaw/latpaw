@@ -13,7 +13,7 @@
  *= require social-share-button
 */
 body{background:url(bg.png) left top repeat;}
-a:hover{background:none;text-decoration:none!important}
+aa a:hover{background:none;text-decoration:none!important}
 .fl{float:left;margin-right:10px;}
 .fr{float:right;}
 .logo{line-height:20px;}
@@ -69,8 +69,9 @@ video{margin:0;padding:0;margin-bottom:10px;}
 
 .rightside section{border-radius:6px;padding-bottom:20px;box-shadow:0 1px 2px rgba(0,0,0,0.15);background: #fff;}
 
-.recentitle{color:#aaa;font-size:15px;margin-bottom:20px;height:30px;text-align: center;border-bottom: 1px #ccc solid;}
+.recentitle{-moz-transition:all 1s ease-in-out;-webkit-transition:all 1s ease-in-out;color:#aaa;font-size:15px;margin-bottom:20px;height:30px;text-align: center;border-bottom: 1px #ccc solid;}
 
+h3.recentitle:hover{color:#272822;}
 .rightside p{margin-left:10px;}
 
 #overlay{display:none;opacity:0;}
@@ -85,12 +86,26 @@ video{margin:0;padding:0;margin-bottom:10px;}
 
 .rightside h3{border-top-right-radius: 6px;border-top-left-radius: 6px;}
 
-h1{}
-h1:hover{
-	-moz-transition:all 1s ease-in-out;
-	-moz-transform:scale(1.1);
-	-webkit-transition:all 1s ease-in-out;
-	-webkit-transform:scale(1.1);
-	transition:all 1s ease-in-out;
-	transform:scale(1.1);
+h1{-moz-transition:all .5s ease-in-out;-webkit-transition:all 0.5s ease-in-out;
+-moz-animation-duration:3s;-moz-animation-name:slidein;
+-webkit-animation-duration:3s;-webkit-animation-name:slidein;
 }
+@-moz-keyframes slidein{
+	from{margin-left:100%;width:400%;color:#ccc;}
+	/*75%{margin-left:25%;width:150%;}*/
+	to{margin-left:0%;width:100%;}
+}
+@-webkit-keyframes slidein{
+	from{margin-left:100%;width:400%;color:#ccc;}
+	/*75%{margin-left:25%;width:150%;}*/
+	to{margin-left:0%;width:100%;}
+}
+h1:hover{-moz-transform:translatex(10px);-webkit-transform:scale(1.1);}
+
+p:hover i{-moz-transform:rotate(180deg);-webkit-transform:rotate(180deg);}
+
+i{-moz-transition:all 0.5s ease-in-out;-webkit-transition:all 0.5s ease-in-out;}
+
+.css2:hover{background: #fff;}
+.css2{-moz-transition:all 0.5s ease-in-out;display:block;float:left;margin-right:5px;}
+/*#activetag{box-shadow: 0 1px 2px rgba(0,0,0,0.15);font-size:26px;background: #fff;}*/

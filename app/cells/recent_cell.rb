@@ -1,7 +1,7 @@
 class RecentCell < Cell::Rails
 
   def display
-    @posts = Post.all
+    @posts = Post.all(:order=>:id)
     render
   end
 
