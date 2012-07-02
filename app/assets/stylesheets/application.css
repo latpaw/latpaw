@@ -86,4 +86,11 @@ video{margin:0;padding:0;margin-bottom:10px;}
 .rightside h3{border-top-right-radius: 6px;border-top-left-radius: 6px;}
 
 h1{}
-h1:hover{-moz-transition:all 1s ease-in-out;-moz-transform:scale(1.1);-webkit-transition:all 1s ease-in-out;-webkit-transform:scale(1.1);}
+h1:hover{
+	-moz-transition:all 1s ease-in-out;
+	-moz-transform:scale(1.1);
+	-webkit-transition:all 1s ease-in-out;
+	-webkit-transform:scale(1.1);
+	transition:all 1s ease-in-out;
+	transform:scale(1.1);
+}
