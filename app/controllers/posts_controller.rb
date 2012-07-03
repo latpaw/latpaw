@@ -45,7 +45,8 @@ class PostsController < ApplicationController
     @postss = Post.all
     @post = Post.find(params[:id])
     @user = User.find(@post.userid) rescue User.first
-    @firstpost = Post.first
+    @firstpost = Post.order("created_at DESC").last
+    @lastpost = Post.order("created_at DESC").first
     @postnext = @post.next
     @prepost = prepost(@post) unless @post.id == 1
     respond_to do |format|

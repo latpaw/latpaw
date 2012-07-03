@@ -71,7 +71,7 @@
 <% end %>
 <%= link_to 'Back', posts_path %>
 <br /><br />
-<p><% unless @firstpost.id == @post.id %><%= link_to "Pre Post", @prepost %><% end %> | <% unless @postnext.nil?%><%= link_to "Next Post", @postnext %><% end %></p>
+<p><% unless @firstpost.id == @post.id %><%= link_to "Pre Post", @prepost %><% end %> | <% unless @lastpost.id == @post.id %><%= link_to "Next Post", @postnext %><% end %></p>
 
 <section class="comment-wrap">
 <p class="label label-info commcount"><%= @post.comments.count.to_s %> comments has been submitted.</p>
