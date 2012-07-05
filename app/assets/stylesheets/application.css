@@ -108,3 +108,13 @@ i{-moz-transition:all 0.5s ease-in-out;-webkit-transition:all 0.5s ease-in-out;}
 .css2:hover{background: #fff;}
 .css2{-moz-transition:all 0.5s ease-in-out;display:block;float:left;margin-right:5px;}
 /*#activetag{box-shadow: 0 1px 2px rgba(0,0,0,0.15);font-size:26px;background: #fff;}*/
+
+/*login*/
+#loginpage{background-size:cover;background:url(pattern.png),url(login.jpg) no-repeat;}
+
+.loginform{position:absolute;width:300px;opacity:0;margin-left:40%;margin-top:170px;
+-moz-transition:all 2s ease-in-out;-webkit-transition:all 2s ease-in-out;}
+
+.loginform:hover{opacity:1;}
+
+
