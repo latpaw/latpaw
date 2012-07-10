@@ -12,7 +12,8 @@
   <h1> <%= @post.name %></h1>
   <p><%= social_share_button_tag(@post.name) %></p>
   <%=h time_tag @post.created_at ,:class=>"gray"%> 
-  <%= link_to ". By "+@user.email, "/users/#{@user.id}", :class=>"gray"%>
+  <%= link_to "By "+@user.email, "/users/#{@user.id}", :class=>"gray"%>
+
  
  <% unless @post.video2.to_s.empty? %>
    <% if MIME::Types.type_for(@post.video2.path).to_s.index("video") %>

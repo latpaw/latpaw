@@ -1,8 +1,12 @@
 %h3.recentitle
-  Recent Posts
+  %span
+    %i.icon-th-large.icon-white
+    %br
+    %i.icon-list.icon-white
+    Recent Posts
 %div
   -@posts.each do |post|
     %p
-      %i.icon-adjust
+      %i.icon-adjust.icon-white
       = link_to post.name , post
 

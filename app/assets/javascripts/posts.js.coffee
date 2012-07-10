@@ -23,7 +23,7 @@ $(document).ready ->
      v.css "position","absolute"
      v.css "display","block"
      v.css "z-index","2000"
-     v.css "left","10%"
+     v.css "left","15%"
      v.css "top", position
      v.css "opacity","0"
      v.css "width","1000"
@@ -38,7 +38,7 @@ $(document).ready ->
      $('#video').css "left","0"
      $('#video').css "top","0"
      $('#video').animate
-       width:551
+       width:633
      , 1000, ->
 
   $('a.css2,a.css1,a.css3,a.css4').hover (->

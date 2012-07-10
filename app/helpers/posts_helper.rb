@@ -22,6 +22,18 @@ include ActsAsTaggableOn::TagsHelper
       return "video" if type.index("video")
    end
  
-
+  def allcomments
+     unread = 0
+     @posts = Post.where("userid = #{current_user.id}").find(:all)
+     @comms = @posts.map {|post| post.comments.count }
+     return allcomments = @comms.sum {|c| c}
+     # @posts.map do |post|
+     #      post.comments.map do |c|
+     #        if c.fromid == nil
+     #          unread = unread + 1
+     #        end
+     #     end
+     #   end
+  end
 
 end
