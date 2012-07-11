@@ -143,3 +143,26 @@ margin-top:2px;}
 #activetag{background: #aaa;padding:3px;z-index:1100}
 a#activetag:hover{text-decoration: none;}
 .red{color:#f00}
+
+
+#linkpost {padding:10px;display:block;
+	border-radius:50%;width:50px;height:50px;line-height:45px;
+    position:absolute;left:100px;top:100px;float:left;box-shadow:0 3px 8px #aaa, 0 2px 3px #fff inset;
+    background: -moz-linear-gradient(center top, #f7f7f7, #e7e7e7);
+    text-align:center;font-weight:bold;
+}
+
+#linkpost:hover{text-decoration: none;
+background: -moz-linear-gradient(center top, #fafafa, #eaeaea);
+}
+#linkpost:before{
+    display:block;
+	border-radius:50%;width:100px;height:100px;
+    position:absolute;left:-16px;top:-16px;float:left;
+    box-shadow:0 8px 48px #ddd inset;
+    text-align:center;
+    content:"";z-index:-1;
+}
+#linkpost:after{
+	content:"posts"
+}
