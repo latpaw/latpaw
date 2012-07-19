@@ -36,4 +36,10 @@ include ActsAsTaggableOn::TagsHelper
      #   end
   end
 
+  def remove_tag_helper
+    @post = Post.find(params[:id])
+    @post.tag_list.remove(params[:tag_id])
+    @post.save
+  end
+
 end
