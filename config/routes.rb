@@ -15,10 +15,11 @@ Aa::Application.routes.draw do
    resources :tags, :module => :acts_as_taggable_on
 
 
-   match 'posts/:id/remove_tag/:tag_id'=>'posts#remove_tag'
+   match 'posts/:id/remove/:tag_id'=>'posts#remove'
    match 'posts/:id/add_tag/'=>'posts#add_tag'
    match 'posts/tag/:tag_id', :to=> 'posts#tag'
    match 'posts/:post_id/add_reply/', :to=>'comments#add_reply'
+   # match 'tags/add', :to=>"tags#add"
 
   match 'users/:id', :to=>'users#show'
  

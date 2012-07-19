@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
 
- respond_to :js, :only=>:remove_tag
+
  # load_and_authorize_resource
  #  skip_authorize_resource :only=> :tag
 
@@ -17,20 +17,11 @@ class PostsController < ApplicationController
     redirect_to @post,:flash => {:success=>"Tags updated."}
   end
 
-  def remove_tag
+  def remove
     @post = Post.find(params[:id])
     @post.tag_list.remove(params[:tag_id])
     @post.save
-    #redirect_to @post,:flash => {:success=>"Tags updated."}
-    respond_with(@post) do |format|
-      format.js {render @post}
-    end
-  end
-
-  def remove 
-    @post = Post.find(params[:id])
-    @post.tag_list.remove(:tag_id)
-    @post.save
+    redirect_to @post
   end
 
   def index

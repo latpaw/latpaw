@@ -38,20 +38,8 @@
 
 
 <p class="tags clear-fix"><i class="icon-tags pull-left"></i><span> : </span>
-<% @post.tags.each do |tag| %>
-  <%= link_to(:action=>:tag,:tag_id=>tag.name) do %>
-    <span class="label label-success"><%= tag.name%></span>
-  <% end %>
-  <%= link_to 'x', {
-                    :action =>"remove_tag",
-                    :id=> @post.id,
-                    :tag_id => tag.name,
-                    :confirm => 'Are you sure to delete the tag?',
-                    :controller=>'posts',
-                    :remote=>true
-                   }, :class=>'remove_tag'%>
 
-<% end %>
+ <%= render :partial=>'tag', :collection=>@post.tags %>
 
   
 <i class="icon-plus add_tag" onclick="if(document.getElementById('add_tag').style.display=='none'){document.getElementById('add_tag').style.display='block';}else{document.getElementById('add_tag').style.display='none';}" ></i>
