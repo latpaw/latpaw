@@ -1,1 +1,1 @@
-$(".comment-wrap").append("<%= render(:partial=>@comment)%>")
+$(".comment-wrap").append('<%= render(:partial=>"comment",:object=>@comment,:locals=>{:post=>@post})%>')
