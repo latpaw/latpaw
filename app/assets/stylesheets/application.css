@@ -54,7 +54,9 @@ body{padding:0;margin:0}
 
 .tags *{float:left;}
 .tags a{margin-left:5px;}
+
 #add_tag{display:none;}
+.add_tag{float:left;margin-left:5px;}
 .add_tag:hover{cursor: pointer;box-shadow:0 0 8px rgba(82,168,236,0.6) inset;}
 .tag_field{margin-bottom: 0;height:17px;}
 
@@ -165,3 +167,6 @@ background: -moz-linear-gradient(center top, #fafafa, #eaeaea);
 #linkpost:after{
 	content:"posts"
 }
+
+
+#tag_id{margin-bottom: 0!important;}

@@ -1,0 +1,1 @@
+$(".comment-wrap").append("<%= render(:partial=>@comment)%>")

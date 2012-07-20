@@ -37,33 +37,21 @@
 </p>
 
 
-<p class="tags clear-fix"><i class="icon-tags pull-left"></i><span> : </span>
-<% @post.tags.each do |tag| %>
-  <%= link_to(:action=>:tag,:tag_id=>tag.name) do %>
-    <span class="label label-success"><%= tag.name%></span>
-  <% end %>
-<!--   <%= link_to 'x', {
-                    :action =>"remove_tag",
-                    :id=> @post.id,
-                    :tag_id => tag.name,
-                    :confirm => 'Are you sure to delete the tag?',
-                    :controller=>'posts',
-                    :remote=>true
-                   }, :class=>'remove_tag'%>
-
-<% end %> -->
-
-<a href="#" class="<%= tag.name %>" id="abc"></a>
-
-  
-<i class="icon-plus add_tag" onclick="if(document.getElementById('add_tag').style.display=='none'){document.getElementById('add_tag').style.display='block';}else{document.getElementById('add_tag').style.display='none';}" ></i>
-
+<p class="tags" id="alltag"><i class="icon-tags pull-left"></i><span> : </span>
+<% if @post.tags == [] %>
+<span class="label label-success empty">Empty Tags</span>
+<% else%>
+ <%= render :partial=>'tag', :collection=>@post.tags %>
+<% end %>
 </p>
-
+<i class="icon-plus add_tag" onclick="if(document.getElementById('add_tag').style.display=='none'){document.getElementById('add_tag').style.display='block';}else{document.getElementById('add_tag').style.display='none';}" ></i>
+<div class="clear"></div>
 <section id="add_tag"> 
-<%= form_tag({:action=>"add_tag",:remote=>true,:id=>@post.id,:controller=>"posts"},:method=>:put) do %>
+<%= form_tag("/posts/#{params[:id]}/add_tag/",:remote=>true,:method=>:post) do %>
+<fieldtag>
   <%= text_field_tag :tag_id,nil,:class=>"tag_field",:placeholder=>"Tag Name" %>
   <%= submit_tag 'Add A Tag',:class=>'btn btn-info',:disable_with=>"Adding" %>
+</fieldtag>
 <% end %>
 </section>
 
@@ -78,12 +66,13 @@
 <p><% unless @firstpost.id == @post.id %><%= link_to "Pre Post", @prepost %><% end %> | <% unless @lastpost.id == @post.id %><%= link_to "Next Post", @postnext %><% end %></p>
 
 <section class="comment-wrap">
-<p class="label label-info commcount"><%= @post.comments.count.to_s %> comments has been submitted.</p>
+<p class="label label-info commcount"><span class="anum"><%= @post.comments.count.to_s %></span> comments has been submitted.</p>
 <% @post.comments.each do |comment| %>
-<div class="comment">
+<div class="comment" id="<%= dom_id(comment)%>">
   <%= link_to 'X', [comment.post, comment],
                :confirm => 'Are you sure?',
                :method => :delete ,
+               :remote=>true,
                :class=>'fr'%>
 <span><a href="#"><%= comment.commenter%></a></span><span class="gray"> &bull; <%= time_ago_in_words(comment.created_at) %> ago</span><br />
 
@@ -116,7 +105,7 @@
 </section>
 <br />
 
-<%= form_for([@post,@post.comments.build])  do |f| %>
+<%= form_for([@post,@post.comments.build],:remote=>true)  do |f| %>
 <div class="field">
   <%= f.text_field :commenter ,:class=>"span12",:placeholder=>"Nicky Name"%>
 </div>

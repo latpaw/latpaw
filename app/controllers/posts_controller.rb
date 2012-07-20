@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
 
- respond_to :js, :only=>:remove_tag
+
  # load_and_authorize_resource
  #  skip_authorize_resource :only=> :tag
 
@@ -13,24 +13,21 @@ class PostsController < ApplicationController
   def add_tag
     @post = Post.find(params[:id])
     @post.tag_list.add(params[:tag_id])
-    @post.save
-    redirect_to @post,:flash => {:success=>"Tags updated."}
-  end
-
-  def remove_tag
-    @post = Post.find(params[:id])
-    @post.tag_list.remove(params[:tag_id])
-    @post.save
-    #redirect_to @post,:flash => {:success=>"Tags updated."}
-    respond_with(@post) do |format|
-      format.js {render @post}
+    if @post.save
+      @tag = @post.tags.where(:name=>params[:tag_id])
+      respond_to do |format|
+        format.js
+      end
     end
   end
 
-  def remove 
+  def remove
     @post = Post.find(params[:id])
-    @post.tag_list.remove(:tag_id)
-    @post.save
+    @tag = @post.tags.where(:name=>params[:tag_id]).first
+    @tag.destroy
+    # repond_to do |format|  why unable to with these code
+    #   format.js 
+    # end
   end
 
   def index
