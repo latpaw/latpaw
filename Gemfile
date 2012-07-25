@@ -10,7 +10,6 @@ gem 'spidr'
 gem 'permalink'
 
 
-gem 'sqlite3'
 gem 'pg'
 gem 'thin'
 gem 'devise'
