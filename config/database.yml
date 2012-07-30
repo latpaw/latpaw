@@ -18,8 +18,8 @@ test:
   pool: 5
   timeout: 5000
 
-development:
+production:
   adapter: postgresql
   database: pg_development
   pool: 5
-  username: dhh
+  username: emerson

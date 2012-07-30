@@ -51,19 +51,19 @@ gem 'jquery-rails'
 
 gem 'paperclip'
 
-group :development, :test do
-  gem 'capistrano', '2.9.0', :require => false
-  gem 'rvm-capistrano', :require => false
-  gem "memcache-client", "1.8.5"
-  gem 'rspec-rails', '~> 2.10.0'
-  gem 'factory_girl_rails'
-  gem 'database_cleaner'
-  gem 'thin'
-  gem "rspec-cells"
-  gem "capybara", :require => false
-  gem "sunspot-rails-tester"
-  gem 'api_taster'
-end
+# group :development, :test do
+#   gem 'capistrano', '2.9.0', :require => false
+#   gem 'rvm-capistrano', :require => false
+#   gem "memcache-client", "1.8.5"
+#   gem 'rspec-rails', '~> 2.10.0'
+#   gem 'factory_girl_rails'
+#   gem 'database_cleaner'
+#   gem 'thin'
+#   gem "rspec-cells"
+#   gem "capybara", :require => false
+#   gem "sunspot-rails-tester"
+#   gem 'api_taster'
+# end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
