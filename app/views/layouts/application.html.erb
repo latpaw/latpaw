@@ -7,6 +7,7 @@
 <%= stylesheet_link_tag    "social_share_button", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link rel="shortcut icon" href="<%= root_url %>assets/rails.png"/>
 </head>
 <body>
     <header class="navbar navbar-fixed-top">
@@ -51,7 +52,6 @@
 </div>
 
 <div class="span4 rightside">
-
    <section class="recent_post">
    <%= render_cell :recent, :display %>
    </section>
