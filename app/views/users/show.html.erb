@@ -2,3 +2,10 @@
 <p>Email: <%= @user.email %></p>
  <p>Create Time: <%= time_ago_in_words(@user.created_at) %></p>
  <p>Update Time: <%= time_ago_in_words(@user.updated_at) %></p>
+ <h3 id="ac">All Comments for You</h3>
+
+ <% @posts.map do |p| %>
+   <% p.comments.map do |c| %>
+     <p> <span class="gray"> <%= c.commenter %></span>:<%= c.body%></p>
+   <% end %>
+ <% end %>

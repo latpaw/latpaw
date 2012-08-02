@@ -23,7 +23,10 @@ aa a:hover{background:none;text-decoration:none!important}
 
 nav{width:100%;min-width:960px}
 nav li{float:left;margin-left:20px;list-style:none;}
-.navbar-inner{}
+/*.nav li a{background: #2d2d2d!important;}*/
+/*.nav li a:hover{font-weight:bold;}*/
+/*.navbar-inner{background:#2d2d2d!important}*/
+/*.dropdown-menu li a{background: #fff!important;}*/
 
 h3 a{text-decoration:none;}
 .articles{border-bottom: 1px #aaa solid;}
@@ -135,7 +138,7 @@ margin-top:2px;}
 /*login*/
 #loginpage{background-size:cover;background:url(pattern.png),url(login.jpg) no-repeat;}
 
-.loginform{position:absolute;width:300px;opacity:0;margin-left:40%;margin-top:170px;
+.loginform{position:absolute;width:300px;margin-left:40%;margin-top:170px;
 -moz-transition:all 2s ease-in-out;-webkit-transition:all 2s ease-in-out;}
 
 .loginform:hover{opacity:1;}
@@ -148,7 +151,7 @@ a#activetag:hover{text-decoration: none;}
 
 #linkpost {padding:10px;display:block;
 	border-radius:50%;width:50px;height:50px;line-height:45px;
-    position:absolute;left:100px;top:100px;float:left;box-shadow:0 3px 8px #aaa, 0 2px 3px #fff inset;
+    position:absolute;left:950px;top:200px;float:left;box-shadow:0 3px 8px #aaa, 0 2px 3px #fff inset;
     background: -moz-linear-gradient(center top, #f7f7f7, #e7e7e7);
     text-align:center;font-weight:bold;
 }
@@ -170,3 +173,10 @@ background: -moz-linear-gradient(center top, #fafafa, #eaeaea);
 
 
 #tag_id{margin-bottom: 0!important;}
+
+/*loginform*/
+#user_email{height:25px;}
+#user_password{height:25px;}
+.loginform form{background:-moz-linear-gradient(to bottom,#eee,#ddd 50%,#eee);
+border-radius:4px;padding:20px;
+}
