@@ -26,7 +26,7 @@ object,
 embed,
 video,
 iframe {
-	width: auto;
+	/*width: auto;*/
 	max-width: 100%;
 }
 

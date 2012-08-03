@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120628035518) do
+ActiveRecord::Schema.define(:version => 20120803131301) do
 
   create_table "comments", :force => true do |t|
     t.string   "commenter"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20120628035518) do
     t.datetime "updated_at",          :null => false
     t.string   "avatar"
     t.integer  "userid"
+    t.string   "video"
     t.string   "video2_file_name"
     t.string   "video2_content_type"
     t.integer  "video2_file_size"
@@ -106,6 +107,7 @@ ActiveRecord::Schema.define(:version => 20120628035518) do
     t.datetime "created_at",                                            :null => false
     t.datetime "updated_at",                                            :null => false
     t.string   "role"
+    t.string   "nickname"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
