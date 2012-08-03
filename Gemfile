@@ -9,8 +9,8 @@ gem 'nokogiri'
 gem 'spidr'
 gem 'permalink'
 
-
-gem 'pg'
+gem 'sqlite3'
+#gem 'pg'
 gem 'thin'
 gem 'devise'
 gem 'cancan'
