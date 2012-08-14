@@ -1,3 +1,7 @@
+<%= content_for :title do %>
+  Latpaw.me - 好久不见,你还好吗
+<% end %>
+
 <p><%= link_to "Home", :root %> / <%= link_to "Posts", posts_path %> / <span class="gray">All Posts</span></p>
 <article>
 
@@ -5,7 +9,7 @@
   <section class="articles">
     <h3><%= link_to post.name , post %></h3>
     <p class="gray"><%= time_tag post.created_at %></p>
-    <%  abc = truncate(post.content,:length=>200) %>
+    <%  abc = truncate(post.content,:length=>300) %>
     <p><%= raw markdown.render(abc) %></p>
     <% unless post.video2.to_s.empty? %>
      <p>

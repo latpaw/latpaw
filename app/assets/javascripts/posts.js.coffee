@@ -28,8 +28,8 @@ $(document).ready ->
      v.css "opacity","0"
      v.css "width","1000"
      v.animate
-       opacity:1
-       #width:1000
+       opacity:1,
+       width:1000
      , 1000, ->
 
   $('#overlay').click () ->
