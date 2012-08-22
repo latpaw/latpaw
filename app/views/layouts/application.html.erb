@@ -10,6 +10,20 @@
   <link rel="shortcut icon" href="<%= root_url %>assets/rails.png"/>
 </head>
 <body>
+  <div id="loginpage">
+    <p><%= link_to "" , "posts", :id=>"linkpost" %></p>
+    <% unless user_signed_in?%>
+      <div class="loginform">
+      <%= form_for("user",:url=>user_session_path) do |f| %>
+      <p><%= f.text_field :email,:placeholder=>"Email" %></p>
+      <p><%= f.password_field :password,:placeholder=>"Password" %></p>
+      <!-- <p><%= f.check_box :remember_me %> Remember Me</p> -->
+      <p><%= f.submit 'Sign in',:class=>"btn btn-info" %> <%= link_to "Forgot your password?", new_password_path('user') %></p>
+    <% end %>
+  </div>
+  <% end %>
+</div>
+  <div id="custom">
     <header class="navbar navbar-fixed-top">
     <div class="navbar-inner">
     <div class="container">
@@ -68,6 +82,7 @@
    <section class="weibo">
      <iframe width="307" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=300&height=600&fansRow=2&ptype=1&speed=0&skin=5&isTitle=0&noborder=0&isWeibo=1&isFans=1&uid=1886512401&verifier=6e85d973&colors=603bbb,603bbb,fff,aaa,603bbb&dpc=1"></iframe>
    </section>
+</div>
 </div>
 </div>
 </div>

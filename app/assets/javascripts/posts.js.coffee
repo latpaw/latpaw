@@ -52,3 +52,15 @@ $(document).ready ->
      $("#activetag").css "box-shadow","none"
      $("#activetag").css "font-size","1.2em"
      @id = ""
+     
+  height = window.screen.availHeight
+  $("#loginpage").css "height", height
+  $('#loginpage').click () ->
+     $('#loginpage').animate
+      # height:0,
+      marginTop:-height
+     , 1000 , ->
+     $("#custom").css "display","block"
+     $("#custom").animate
+       opacity:1
+       , 1000 , ->
