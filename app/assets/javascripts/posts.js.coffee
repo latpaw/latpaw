@@ -52,3 +52,10 @@ $(document).ready ->
      $("#activetag").css "box-shadow","none"
      $("#activetag").css "font-size","1.2em"
      @id = ""
+     
+  height = document.body.clientHeight
+  $("#loginpage").css "height", height
+  $('#loginpage').click () ->
+     $('#loginpage').animate
+      height:0
+     , 1000 , ->
