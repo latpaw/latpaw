@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: http://ruby.taobao.org/
   specs:
     actionmailer (3.2.3)
       actionpack (= 3.2.3)
@@ -181,6 +181,7 @@ GEM
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+    sqlite3 (1.3.6)
     subexec (0.2.2)
     therubyracer (0.10.1)
       libv8 (~> 3.3.10)
@@ -230,6 +231,7 @@ DEPENDENCIES
   simple_form
   social-share-button
   spidr
+  sqlite3
   therubyracer
   thin
   uglifier (>= 1.0.3)

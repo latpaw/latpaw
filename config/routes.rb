@@ -23,7 +23,7 @@ Aa::Application.routes.draw do
 
   match 'users/:id', :to=>'users#show'
  
-  root :to => 'home#index'
+  root :to => 'posts#index'
 
   # See how all your routes lay out with "rake routes"
 

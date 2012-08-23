@@ -23,6 +23,7 @@ aa a:hover{background:none;text-decoration:none!important}
 
 nav{width:100%;min-width:960px}
 nav li{float:left;margin-left:20px;list-style:none;}
+/*.navbar-fixed-top, .navbar-fixed-bottom{z-index:-10!important}*/
 /*.nav li a{background: #2d2d2d!important;}*/
 /*.nav li a:hover{font-weight:bold;}*/
 /*.navbar-inner{background:#2d2d2d!important}*/
@@ -136,9 +137,11 @@ margin-top:2px;}
 /*#activetag{box-shadow: 0 1px 2px rgba(0,0,0,0.15);font-size:26px;background: #fff;}*/
 
 /*login*/
-#loginpage{background-size:cover;background:url(pattern.png),url(login.jpg) no-repeat;}
+#custom{display:none;opacity:0;}
+#loginpage{background-size:cover;background:url(pattern.png),url(login.jpg) no-repeat;
+	width:100%;z-index:5000;overflow:hidden;margin:0;padding:0;}
 
-.loginform{position:absolute;width:300px;margin-left:40%;margin-top:170px;
+.loginform{width:300px;margin-left:40%;margin-top:170px;float:left;
 -moz-transition:all 2s ease-in-out;-webkit-transition:all 2s ease-in-out;}
 
 .loginform:hover{opacity:1;}
@@ -149,9 +152,9 @@ a#activetag:hover{text-decoration: none;}
 .red{color:#f00}
 
 
-#linkpost {padding:10px;display:block;
+#linkpost {padding:10px;display:block;float:left;
 	border-radius:50%;width:50px;height:50px;line-height:45px;
-    position:absolute;left:950px;top:200px;float:left;box-shadow:0 3px 8px #aaa, 0 2px 3px #fff inset;
+    margin-right:150px;margin-top:200px;float:right;box-shadow:0 3px 8px #aaa, 0 2px 3px #fff inset;
     background: -moz-linear-gradient(center top, #f7f7f7, #e7e7e7);
     text-align:center;font-weight:bold;
 }
@@ -162,7 +165,7 @@ background: -moz-linear-gradient(center top, #fafafa, #eaeaea);
 #linkpost:before{
     display:block;
 	border-radius:50%;width:100px;height:100px;
-    position:absolute;left:-16px;top:-16px;float:left;
+    float:left;left:-16px;top:-16px;float:left;
     box-shadow:0 8px 48px #ddd inset;
     text-align:center;
     content:"";z-index:-1;
@@ -180,3 +183,6 @@ background: -moz-linear-gradient(center top, #fafafa, #eaeaea);
 .loginform form{background:-moz-linear-gradient(to bottom,#eee,#ddd 50%,#eee);
 border-radius:4px;padding:20px;
 }
+
+
+/*skj*/

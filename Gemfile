@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://ruby.taobao.org'
 
 gem 'rails', '3.2.3'
 
@@ -9,7 +9,7 @@ gem 'nokogiri'
 gem 'spidr'
 gem 'permalink'
 
-
+gem 'sqlite3'
 gem 'pg'
 gem 'thin'
 gem 'devise'
