@@ -10,9 +10,11 @@
   <link rel="shortcut icon" href="<%= root_url %>assets/rails.png"/>
 </head>
 <body>
+<% unless user_signed_in? %>
+  <% if request.url == "http://172.16.2.198:5000/" %>
   <div id="loginpage">
     <p><%= link_to "" , "posts", :id=>"linkpost" %></p>
-    <% unless user_signed_in?%>
+   
       <div class="loginform">
       <%= form_for("user",:url=>user_session_path) do |f| %>
       <p><%= f.text_field :email,:placeholder=>"Email" %></p>
@@ -21,9 +23,11 @@
       <p><%= f.submit 'Sign in',:class=>"btn btn-info" %> <%= link_to "Forgot your password?", new_password_path('user') %></p>
     <% end %>
   </div>
-  <% end %>
+ 
 </div>
-  <div id="custom">
+<% end %>
+<% end %>
+  <div id="<% if user_signed_in? %>custom-hide<%elsif request.url != 'http://172.16.2.198:5000/' %>custom-hide<% else %>custom<%end%>">
     <header class="navbar navbar-fixed-top">
     <div class="navbar-inner">
     <div class="container">

@@ -53,7 +53,7 @@ $(document).ready ->
      $("#activetag").css "font-size","1.2em"
      @id = ""
      
-  height = window.screen.availHeight
+  height = document.documentElement.clientHeight
   $("#loginpage").css "height", height
   $('#loginpage').click () ->
      $('#loginpage').animate
