@@ -54,6 +54,7 @@ $(document).ready ->
      @id = ""
      
   height = document.documentElement.clientHeight
+  width = document.documentElement.clientWidth
   $("#loginpage").css "height", height
   $('#loginpage').click () ->
      $('#loginpage').animate
@@ -61,6 +62,10 @@ $(document).ready ->
       marginTop:-height
      , 1000 , ->
      $("#custom").css "display","block"
+     $(".indextext").css "display","none"
      $("#custom").animate
        opacity:1
        , 1000 , ->
+
+  $(".indextext").css "top", height-60
+  $(".indextext").css "right", 20

@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   # GET /posts.json
 
 
- # load_and_authorize_resource
+ load_and_authorize_resource
  #  skip_authorize_resource :only=> :tag
 
   def tag

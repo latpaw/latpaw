@@ -138,8 +138,40 @@ margin-top:2px;}
 
 /*login*/
 #custom{display:none;opacity:0;}
-#loginpage{background-size:cover;background:url(pattern.png),url(login.jpg) no-repeat;
+#loginpage{background-size:cover;background:url(login.jpg) no-repeat top left;
 	width:100%;z-index:5000;overflow:hidden;margin:0;padding:0;}
+
+
+@font-face{
+font-family: 'Pacifico';
+src:url('Pacifico.ttf');
+font-weight:normal;
+font-style:normal;
+}
+
+.signindex{margin-right:20px;margin-top:10px;}
+.signindex a {color:#fff;font-family: weiruan-yahei}
+.latpaw{font-size:40px;color:#fff;margin:20px;font-family: weiruan-yahei;
+font-weight:bold;}
+.latpaw a{color:#fff}
+.latpaw a:hover{color:#fff;text-decoration: none;}
+.intro{font-size:50px;color:#dedede;margin-left:20px;font-family: "Pacifico","Helvetica Neue","Helvetica",cursive;
+}
+.indextext{position: fixed;}
+.indext2{display:block;color:#fff;font-family:weiruan-yahei;}
+.social1,.social2,.social3,.social4{
+    width:28px;height:28px;
+	display:block;float:right;background:url(icons_social.png) no-repeat;margin:0 10px;}
+
+.social1{background-position: 0 0;}
+
+.social2{background-position: -42px 0;}
+.social3{background-position: -80px 0;}
+.social4{background-position: -118px 0;}
+
+
+
+
 
 .loginform{width:300px;margin-left:40%;margin-top:170px;float:left;
 -moz-transition:all 2s ease-in-out;-webkit-transition:all 2s ease-in-out;}
@@ -156,7 +188,7 @@ a#activetag:hover{text-decoration: none;}
 	border-radius:50%;width:50px;height:50px;line-height:45px;
     margin-right:150px;margin-top:200px;float:right;box-shadow:0 3px 8px #aaa, 0 2px 3px #fff inset;
     background: -moz-linear-gradient(center top, #f7f7f7, #e7e7e7);
-    text-align:center;font-weight:bold;
+    text-align:center;font-weight:bold;z-index:100
 }
 
 #linkpost:hover{text-decoration: none;
@@ -165,13 +197,14 @@ background: -moz-linear-gradient(center top, #fafafa, #eaeaea);
 #linkpost:before{
     display:block;
 	border-radius:50%;width:100px;height:100px;
-    float:left;left:-16px;top:-16px;float:left;
+    float:left;margin-left:-25px;margin-top:-25px;
     box-shadow:0 8px 48px #ddd inset;
     text-align:center;
     content:"";z-index:-1;
 }
 #linkpost:after{
-	content:"posts"
+	content:"posts";display:block;
+	float:left;margin-top:-75px;margin-left:10px;
 }
 
 

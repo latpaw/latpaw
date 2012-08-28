@@ -13,16 +13,19 @@
 <% unless user_signed_in? %>
   <% if request.url == "http://latpaw.me/" || request.url == "http://www.latpaw.me/" %>
   <div id="loginpage">
+    <p class="fr signindex"><a href="">LEARN MORE</a> | <a href="/users/sign_in">SIGN IN</a></p>
+    <p class="latpaw"><a href="/">LAT PAW ME</a></p>
+    <p class="intro">Designed & <br /> developed by yue</p>
     <p><%= link_to "" , "posts", :id=>"linkpost" %></p>
-   
-      <div class="loginform">
+   <p class="indextext"><span class="indext2"> A site designed and developed with rails by yue. This is for lat paw.</span> <span class="social1"></span><span class="social2"></span><span class="social3"></span><span class="social4"></span></p>
+<!--       <div class="loginform">
       <%= form_for("user",:url=>user_session_path) do |f| %>
       <p><%= f.text_field :email,:placeholder=>"Email" %></p>
       <p><%= f.password_field :password,:placeholder=>"Password" %></p>
-      <!-- <p><%= f.check_box :remember_me %> Remember Me</p> -->
+      <!- <p><%= f.check_box :remember_me %> Remember Me</p> ->
       <p><%= f.submit 'Sign in',:class=>"btn btn-info" %> <%= link_to "Forgot your password?", new_password_path('user') %></p>
-    <% end %>
-  </div>
+      <% end %>
+      </div> -->
  
 </div>
 <% end %>
