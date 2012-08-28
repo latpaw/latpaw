@@ -11,7 +11,7 @@
 </head>
 <body>
 <% unless user_signed_in? %>
-  <% if request.url == "http://172.16.2.198:5000/" %>
+  <% if request.url == "http://latpaw.me/" || request.url == "http://www.latpaw.me/" %>
   <div id="loginpage">
     <p><%= link_to "" , "posts", :id=>"linkpost" %></p>
    
@@ -27,7 +27,7 @@
 </div>
 <% end %>
 <% end %>
-  <div id="<% if user_signed_in? %>custom-hide<%elsif request.url != 'http://172.16.2.198:5000/' %>custom-hide<% else %>custom<%end%>">
+  <div id="<% if user_signed_in? %>custom-hide<%elsif request.url != 'http://latpaw.me/' && request.url !="http://www.latpaw.me/" %>custom-hide<% else %>custom<%end%>">
     <header class="navbar navbar-fixed-top">
     <div class="navbar-inner">
     <div class="container">
