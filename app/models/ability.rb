@@ -14,6 +14,7 @@ class Ability
       end
     else
       can :read, Post
+      cannot :remove_tag, Post
     end
 
   end

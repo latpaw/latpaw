@@ -11,8 +11,8 @@
 <p><%= link_to "Home", :root %> / <%= link_to "Posts", posts_path %> / <%= @post.name %></p>
   <h1> <%= @post.name %></h1>
   <p><%= social_share_button_tag(@post.name) %></p>
-  <%=h time_tag @post.created_at ,:class=>"gray"%> 
-  <%= link_to "By "+@user.email, "/users/#{@user.id}", :class=>"gray"%>
+  <%=h time_tag @post.created_at ,:class=>"gray"%>
+  <span class="gray"> By <%= link_to @user.nickname || @user.email, "/users/#{@user.id}", :class=>"gray"%></span>
 
  
  <% unless @post.video2.to_s.empty? %>
@@ -43,17 +43,18 @@
 <% else%>
  <%= render :partial=>'tag', :collection=>@post.tags %>
 <% end %>
-</p>
-<i class="icon-plus add_tag" onclick="if(document.getElementById('add_tag').style.display=='none'){document.getElementById('add_tag').style.display='block';}else{document.getElementById('add_tag').style.display='none';}" ></i>
-<div class="clear"></div>
-<section id="add_tag"> 
-<%= form_tag("/posts/#{params[:id]}/add_tag/",:remote=>true,:method=>:post) do %>
-<fieldtag>
-  <%= text_field_tag :tag_id,nil,:class=>"tag_field",:placeholder=>"Tag Name" %>
-  <%= submit_tag 'Add A Tag',:class=>'btn btn-info',:disable_with=>"Adding" %>
-</fieldtag>
+</p><div class="clear"></div>
+<% if can? :add_tag, @post %>
+    <i class="icon-plus add_tag" onclick="if(document.getElementById('add_tag').style.display=='none'){document.getElementById('add_tag').style.display='block';}else{document.getElementById('add_tag').style.display='none';}" ></i>
+    <section id="add_tag"> 
+    <%= form_tag("/posts/#{params[:id]}/add_tag/",:remote=>true,:method=>:post) do %>
+    <fieldtag>
+      <%= text_field_tag :tag_id,nil,:class=>"tag_field",:placeholder=>"Tag Name" %>
+      <%= submit_tag 'Add A Tag',:class=>'btn btn-info',:disable_with=>"Adding" %>
+    </fieldtag>
+    <% end %>
+    </section>
 <% end %>
-</section>
 
 <% if can? :destroy, @post %>
 <%= link_to 'Destroy', @post , :method=> :delete , :confirm=>"Are you sure to delete ?" %> | 
