@@ -12,8 +12,11 @@ class Ability
       can :manage, Post do |post|
          (post.userid == user.id)
       end
+      can :add_tag, Post
     else
       can :read, Post
+      cannot :remove, Post
+      cannot :destory, Comment
     end
 
   end

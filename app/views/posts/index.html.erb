@@ -13,11 +13,15 @@
     <p><%= raw markdown.render(abc) %></p>
     <% unless post.video2.to_s.empty? %>
      <p>
-    <% if request.env["HTTP_USER_AGENT"].index("IE") %>
-     <%= link_to "Watch the video", post.video2.url.gsub(/webm/,"mp4"),:class=>"btn btn-info" %>
-    <% else %>
-     <%= link_to "Watch the video", post.video2.url,:class=>"btn btn-info" %>
-    <% end %>
+      <% if MIME::Types.type_for(post.video2.path).to_s.index("video")%>
+        <% if request.env["HTTP_USER_AGENT"].index("IE") %>
+          <%= link_to "Watch the video", post.video2.url.gsub(/webm/,"mp4"),:class=>"btn btn-info" %>
+          <% else %>
+           <%= link_to "Watch the video", post.video2.url,:class=>"btn btn-info" %>
+          <% end %>
+        <% else %>
+          <%= link_to "Download", post.video2.url.gsub(/webm/,"mp4"),:class=>"btn btn-info" %>
+        <% end %>
     </p>
     <% end %>
   </section>

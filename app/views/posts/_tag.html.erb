@@ -1,4 +1,6 @@
   <%= link_to(:action=>:tag,:tag_id=>tag.name) do %>
     <span class="label label-success tagname <%= dom_id(tag) %>"><%= tag.name%></span>
   <% end %>
+  <% if can? :remove, tag%>
   <%= link_to('x', "/posts/#{params[:id]}/remove/#{tag.name}",:remote => true, :class=>"#{dom_id(tag)}" )%>
+  <% end %>

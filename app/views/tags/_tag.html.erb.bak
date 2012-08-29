@@ -1,7 +1,8 @@
   <%= link_to(:action=>:tag,:tag_id=>tag.name) do %>
     <span class="label label-success"><%= tag.name%></span>
   <% end %>
-  <%= link_to 'x', {
+  <% if can? :remove_tag, tag%>
+    <%= link_to 'x', {
                     :action =>"remove_tag",
                     :id=> @post.id,
                     :tag_id => tag.name,
@@ -9,3 +10,4 @@
                     :controller=>'posts',
                     :remote=>true
                    }, :class=>'remove_tag'%>
+  <% end %>
