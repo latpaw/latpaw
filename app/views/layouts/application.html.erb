@@ -10,14 +10,16 @@
   <link rel="shortcut icon" href="<%= root_url %>assets/rails.png"/>
 </head>
 <body>
+
 <% unless user_signed_in? %>
-  <% if request.url == "http://127.0.0.1:3000/" %>
+  <%- uri = request.url.split("/") %>
+  <% if uri[uri.length-1] == uri[2] %>
   <div id="loginpage">
     <p class="fr signindex"><a href="">LEARN MORE</a> | <a href="/users/sign_in">SIGN IN</a></p>
     <p class="latpaw"><a href="/">LAT PAW ME</a></p>
     <p class="intro">Designed & <br /> developed by yue</p>
     <p><%= link_to "" , "posts", :id=>"linkpost" %></p>
-   <p class="indextext"><span class="indext2"> A site designed and developed with rails by yue. This is for lat paw.</span> <span class="social1"></span><span class="social2"></span><span class="social3"></span><span class="social4"></span></p>
+   <p class="indextext"><span class="indext2"> A site designed and developed with rails by yue. This is for lat paw.</span> <a class="social1" href="https://plus.google.com/116702344696700784079/posts"></a><a class="social2" href="https://twitter.com/tiffanyue"></a><a class="social3" href="#"></a><a class="social4" href="http://www.facebook.com/profile.php?id=1715715580"></a></p>
 <!--       <div class="loginform">
       <%= form_for("user",:url=>user_session_path) do |f| %>
       <p><%= f.text_field :email,:placeholder=>"Email" %></p>
@@ -30,7 +32,7 @@
 </div>
 <% end %>
 <% end %>
-  <div id="<% if user_signed_in? %>custom-hide<%elsif request.url != 'http://127.0.0.1:3000/' %>custom-hide<% else %>custom<%end%>">
+  <div id="<% if user_signed_in? %>custom-hide<%elsif uri[uri.length-1] != uri[2] %>custom-hide<% else %>custom<%end%>">
     <header class="navbar navbar-fixed-top">
     <div class="navbar-inner">
     <div class="container">
@@ -76,6 +78,7 @@
 <div class="container-fluid">
 <div class="row-fluid">
 <div class="span8">
+
 <%= yield %>
 </div>
 
