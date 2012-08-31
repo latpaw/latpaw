@@ -43,9 +43,10 @@
 <% else%>
  <%= render :partial=>'tag', :collection=>@post.tags %>
 <% end %>
-</p><div class="clear"></div>
+</p>
 <% if can? :add_tag, @post %>
     <i class="icon-plus add_tag" onclick="if(document.getElementById('add_tag').style.display=='none'){document.getElementById('add_tag').style.display='block';}else{document.getElementById('add_tag').style.display='none';}" ></i>
+    <div class="clear"></div>
     <section id="add_tag"> 
     <%= form_tag("/posts/#{params[:id]}/add_tag/",:remote=>true,:method=>:post) do %>
     <fieldtag>
@@ -56,6 +57,7 @@
     </section>
 <% end %>
 
+<div class="clear"></div>
 <% if can? :destroy, @post %>
 <%= link_to 'Destroy', @post , :method=> :delete , :confirm=>"Are you sure to delete ?" %> | 
 <% end %>
@@ -70,11 +72,13 @@
 <p class="label label-info commcount"><span class="anum"><%= @post.comments.count.to_s %></span> comments has been submitted.</p>
 <% @post.comments.each do |comment| %>
 <div class="comment" id="<%= dom_id(comment)%>">
+  <% if can? :destroy, comment %>
   <%= link_to 'X', [comment.post, comment],
                :confirm => 'Are you sure?',
                :method => :delete ,
                :remote=>true,
                :class=>'fr'%>
+  <% end %>
 <span><a href="#"><%= comment.commenter%></a></span><span class="gray"> &bull; <%= time_ago_in_words(comment.created_at) %> ago</span><br />
 
   <% if comment.fromid %>
