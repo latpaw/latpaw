@@ -1,6 +1,8 @@
+<!-- 把script部分放到页面最好是头部,然后把onload放到body上或者其他js调用的onload -->
+
 <html>
 <head>
-  <a href="ac.html">ac</a>
+
 <script type="text/javascript">
 function getCookie(c_name)
 {
@@ -31,23 +33,20 @@ function checkCookie()
 cookie_yue = getCookie('cookie_yue')
 refer = document.referrer || window.location.href
 if (cookie_yue == null || cookie_yue == "")
-  setCookie('cookie_yue',refer,365)
+  setCookie('cookie_yue',refer,30)
 else 
   {
     {
-    setCookie('cookie_yue',cookie_yue + '[' + window.location.href,365)
+    setCookie('cookie_yue',cookie_yue + '[' + window.location.href,30)
     }
   }
 }
-
-
 </script>
+
+
 </head>
 
 <body onLoad="checkCookie()">
-  <p id="aa"></p>
-  <script type="text/javascript">
-    document.getElementById("aa").innerHTML = getCookie('cookie_yue')
-  </script>
+  
 </body>
 </html>
