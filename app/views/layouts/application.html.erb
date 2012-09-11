@@ -43,15 +43,15 @@
 <% end %>
 <% end %>
   <div id="<% if user_signed_in? %>custom-hide<%elsif uri[uri.length-1] != uri[2] %>custom-hide<% else %>custom<%end%>">
-    <header class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-    <div class="container">
- <ul class="nav pull-left">
+
+
+    <header class="">
+    <div class="header">
+      <p class="indexh1">LatPaw</p>
+ <ul class="nav pull-right">
   <!-- <%= link_to "Emerson Project", root_url, :class=>"brand" %> -->
   <li class="active"><%= link_to "Post", posts_path %></li>
 	<li class=""><%= link_to "Book", "/posts/48" %></li>
- </ul>
- <ul class="nav pull-right">
   <li><%= link_to 'RSS',"/posts.rss" %></li>
   <% if can? :create, Post %>
    <li><%= link_to 'New Post', new_post_path %></li>
@@ -82,8 +82,9 @@
   <% end -%>
  </ul>
     </div>
-    </div>
     </header>
+
+
 
 <section class="body">
 <div class="container-fluid">
