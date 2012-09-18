@@ -1,0 +1,4 @@
+ <h3 class="recentitle"><span><i class="icon-th-large icon-white"></i><br><i class="icon-list icon-white"></i>&nbsp;所有命令</span></h3>
+<% @commands.each do |c| %>
+  <p><%= link_to c.name , c %></p>
+<% end %>
