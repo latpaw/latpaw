@@ -30,15 +30,18 @@ layout "comm_lay"
 
   def index
     @commandss = Command.all
-    @commands = Command.paginate(:page=>params[:page],:per_page=>10).order('created_at DESC')
-    @command = Command.new    
+    @commands = Command.paginate(:page=>params[:page],:per_page=>10).order('created_at asc')
+    @command = Command.new
 
     respond_to do |format|
       format.html # index.html.erb
+      format.js
       format.json { render json: @commands }
       format.rss { render :layout => false }
     end
   end
+
+
 
   # GET /commands/1
   # GET /commands/1.json
@@ -63,14 +66,14 @@ layout "comm_lay"
 
   # GET /commands/new
   # GET /commands/new.json
-  def new
-    @command = Command.new
+  # def new
+  #   @command = Command.new
  
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @command }
-    end
-  end
+  #   respond_to do |format|
+  #     format.html # new.html.erb
+  #     format.json { render json: @command }
+  #   end
+  # end
 
   # GET /commands/1/edit
   def edit
@@ -84,8 +87,8 @@ layout "comm_lay"
 
     respond_to do |format|
       if @command.save
-        format.html { redirect_to "/commands", notice: 'command was successfully created.' }
-        format.json { render json: @command, status: :created, location: @command }
+        format.js# { redirect_to "/commands", notice: 'command was successfully created.' }
+        # format.json { render json: @command, status: :created, location: @command }
       else
         format.html { render action: "new" }
         format.json { render json: @command.errors, status: :unprocessable_entity }
