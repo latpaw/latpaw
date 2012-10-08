@@ -13,10 +13,13 @@ class Ability
          (post.userid == user.id)
       end
       can :add_tag, Post
+      can :create, Command
     else
       can :read, Post
       cannot :remove, Post
       cannot :destory, Comment
+      cannot :create, Command
+      cannot :destroy, Command
     end
 
   end

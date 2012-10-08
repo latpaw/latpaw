@@ -7,7 +7,9 @@ Linux 命令大全,集锦
 
 
 
-<div class="command"><span><%= link_to 'X', c , :method=> :delete, :class=>"fr" %></span><p><%= link_to c.name, c %> </p> <p><b>功能描述:</b><%= raw(c.desc) %></p></div>
+<div class="command">
+	<% if can? :delete, @command %><span><%= link_to 'X', c , :method=> :delete, :class=>"fr" %></span><% end %>
+	<p><%= link_to c.name, c %> </p> <p><b>功能描述:</b><%= raw(c.desc) %></p></div>
 <%end%>
 </section>
 
@@ -15,18 +17,14 @@ Linux 命令大全,集锦
   <%= will_paginate @commands%>
 </div>
 
+<% if can? :create, @command %>
 <%= form_for(@command,:remote=>true) do |f| %>
-<div class="field">
-
+  <div class="field">
     <%= f.text_field :command,:class=>"span10",:placeholder=>"主要指令" %>
     <%= f.text_field :name,:class=>"span10",:placeholder=>"命令" %>
-
-
     <%= f.text_field :desc,:class=>"span10",:id=>"commdesc",:placeholder=>"描述" %>
     <%= f.text_area :detail,:class=>"span10",:id=>"commdesc",:placeholder=>"详细用法" %>
-
-
     <%= f.submit "", :value=>"添加" %>
   </div>
-
-	<% end %>
+<% end %>
+<% end %>
