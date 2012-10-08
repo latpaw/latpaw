@@ -1,4 +1,7 @@
 Aa::Application.routes.draw do
+
+  resources :commands
+
   ##mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
 

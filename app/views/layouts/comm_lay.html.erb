@@ -50,14 +50,13 @@
       <p class="indexh1">LatPaw</p>
  <ul class="nav pull-right">
   <!-- <%= link_to "Emerson Project", root_url, :class=>"brand" %> -->
-  <li class="active"><%= link_to "Post", posts_path %></li>
-	<li class=""><%= link_to "Commands", "/commands" %></li>
+  <li class="active"><%= link_to "博客", posts_path %></li>
+	<li class=""><%= link_to "命令", "/commands" %></li>
   <li><%= link_to 'RSS',"/posts.rss" %></li>
   <% if can? :create, Post %>
-   <li><%= link_to 'New Post', new_post_path %></li>
+   <li><%= link_to '新建文章', new_post_path %></li>
   <% end %>
 
-   <li><%= link_to 'Google+', 'https://plus.google.com/u/0/116702344696700784079?rel=author' %></li>
   <% if user_signed_in? -%>
    <li class="dropdown">
     <a href= "#" class="dropdown-toggle" data-toggle="dropdown">
@@ -72,14 +71,14 @@
             <span class="red"><%= allcomments %></span> comments
           <% end %>
       </li>
-      <li><%= link_to 'My info', "/users/#{current_user.id}" %></li>
-      <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+      <li><%= link_to "详细", "/users/#{current_user.id}" %></li>
+      <li><%= link_to '登出', destroy_user_session_path, :method => :delete %></li>
     </ul>
    </li>
   <% end -%>
 
   <% unless user_signed_in? -%>
-   <li><%= link_to 'Sign in', new_user_session_path %></li>
+   <li><%= link_to '登录', new_user_session_path %></li>
   <% end -%>
  </ul>
     </div>
@@ -97,7 +96,7 @@
 
 <div class="span4 rightside">
    <section class="recent_post">
-   <%= render_cell :recent, :display %>
+   <%= render_cell :comm_list, :commlist %>
    </section>
    <section id="tagscloud">
    <%= render_cell :tagcloud, :tagcloud %>
