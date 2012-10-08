@@ -1,4 +1,4 @@
- <h3 class="recentitle"><span><i class="icon-th-large icon-white"></i><br><i class="icon-list icon-white"></i>&nbsp; Tags Cloud</span></h3>
+ <h3 class="recentitle"><span><i class="icon-th-large icon-white"></i><br><i class="icon-list icon-white"></i>&nbsp; 标签云</span></h3>
 <p>
 <% tag_cloud(@tags,%w(css1 css2 css3 css4)) do |tag,css_class| %>
    <%= link_to tag.name, {:action => :tag, :tag_id=>tag.name,:controller=>"/posts" }, :class => css_class%>

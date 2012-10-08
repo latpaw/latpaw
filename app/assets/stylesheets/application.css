@@ -250,3 +250,4 @@ border-radius:4px;padding:20px;
 .header .dropdown-menu li{float:none;margin:0;}
 .header .dropdown-menu li a{padding-left:10px;padding-right:10px;}
 .indexh1{font-family:Pacifico;float:left;margin-top:30px;font-size:46px;margin-left:250px;}
+.indexh1 a:hover{text-decoration: none;}

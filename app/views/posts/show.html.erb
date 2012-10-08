@@ -8,7 +8,7 @@
 <%= notice %>
 </p>
 <% end %>
-<p><%= link_to "Home", :root %> / <%= link_to "Posts", posts_path %> / <%= @post.name %></p>
+<p><%= link_to "首页", :root %> / <%= link_to "博客", posts_path %> / <%= @post.name %></p>
   <h1> <%= @post.name %></h1>
   <p><%= social_share_button_tag(@post.name) %></p>
   <%=h time_tag @post.created_at ,:class=>"gray"%>
@@ -69,7 +69,7 @@
 <p><% unless @firstpost.id == @post.id %><%= link_to "Pre Post", @prepost %><% end %> | <% unless @lastpost.id == @post.id %><%= link_to "Next Post", @postnext %><% end %></p>
 
 <section class="comment-wrap">
-<p class="label label-info commcount"><span class="anum"><%= @post.comments.count.to_s %></span> comments has been submitted.</p>
+<p class="label label-info commcount">收到<span class="anum"><%= @post.comments.count.to_s %></span>条评论.</p>
 <% @post.comments.each do |comment| %>
 <div class="comment" id="<%= dom_id(comment)%>">
   <% if can? :destroy, comment %>
@@ -112,10 +112,10 @@
 
 <%= form_for([@post,@post.comments.build],:remote=>true)  do |f| %>
 <div class="field">
-  <%= f.text_field :commenter ,:class=>"span12",:placeholder=>"Nicky Name"%>
+  <%= f.text_field :commenter ,:class=>"span12",:placeholder=>"昵称"%>
 </div>
 <div class="field">
-  <%= f.text_area :body, :class=>"span12 commentbody", :placeholder=>"New Comment here"%>
+  <%= f.text_area :body, :class=>"span12 commentbody", :placeholder=>"评论内容"%>
 </div>
 <div class="actions">
   <%= f.submit :class=>"btn btn-info"%>
