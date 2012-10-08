@@ -30,7 +30,7 @@ layout "comm_lay"
 
   def index
     @commandss = Command.all
-    @commands = Command.paginate(:page=>params[:page],:per_page=>10).order('created_at asc')
+    @commands = Command.paginate(:page=>params[:page],:per_page=>10).order('created_at desc')
     @command = Command.new
 
     respond_to do |format|
