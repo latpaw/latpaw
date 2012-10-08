@@ -1,3 +1,6 @@
+<%= content_for :title do %>
+ <%= @command.name %> <latpaw.me>
+<% end %>
 <h1><%= @command.command %></h1>
 <p class="command_name"><span style="color:#a00">命令: </span><%= @command.name %></p>
 <p class="command_desc"><span  style="color:#0a0">描述: </span><%= @command.desc %></p>
