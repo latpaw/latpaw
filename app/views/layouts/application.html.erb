@@ -29,7 +29,7 @@
     <p class="latpaw"><a href="/">LAT PAW ME</a></p>
     <p class="intro">Designed & <br /> developed by yue</p>
     <p><%= link_to "" , "posts", :id=>"linkpost" %></p>
-   <p class="indextext"><span class="indext2"> A site designed and developed with rails by yue. This is for lat paw.</span> <a class="social1" href="https://plus.google.com/116702344696700784079/posts"></a><a class="social2" href="https://twitter.com/tiffanyue"></a><a class="social3" href="#"></a><a class="social4" href="http://www.facebook.com/profile.php?id=1715715580"></a></p>
+   <p class="indextext"><span class="indext2"> A site designed and developed with rails by yue. This is for lat paw.</span> <a class="social1" href="http://www.facebook.com/profile.php?id=1715715580"></a><a class="social2" href="<%= root_url %>posts.rss"></a><a class="social3" href="https://twitter.com/tiffanyue"></a><a class="social4" href="https://plus.google.com/116702344696700784079/posts"></a></p>
 <!--       <div class="loginform">
       <%= form_for("user",:url=>user_session_path) do |f| %>
       <p><%= f.text_field :email,:placeholder=>"Email" %></p>
@@ -88,7 +88,7 @@
 
 
 <section class="body">
-<div class="container-fluid">
+<div class="container-fluid body_main">
 <div class="row-fluid">
 <div class="span8">
 
@@ -103,7 +103,7 @@
    <%= render_cell :tagcloud, :tagcloud %>
    </section>
    <section class="weibo">
-     <iframe width="307" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=300&height=600&fansRow=2&ptype=1&speed=0&skin=5&isTitle=0&noborder=0&isWeibo=1&isFans=1&uid=1886512401&verifier=6e85d973&colors=603bbb,603bbb,fff,aaa,603bbb&dpc=1"></iframe>
+     <iframe width="443" height="600" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=435&height=600&fansRow=2&ptype=1&speed=0&skin=5&isTitle=0&noborder=0&isWeibo=1&isFans=1&uid=1886512401&verifier=6e85d973&colors=603bbb,603bbb,fff,aaa,603bbb&dpc=1"></iframe>
    </section>
    <section class="recent_post" id="flink">
       <h3 class="recentitle"><span><i class="icon-th-large icon-white"></i><br><i class="icon-list icon-white"></i>&nbsp; 友链</span></h3>

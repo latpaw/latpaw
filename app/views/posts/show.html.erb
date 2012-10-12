@@ -23,6 +23,7 @@
       <source src="<%= @post.video2.url %>" />
       <source src="<%= @post.video2.url.gsub(/webm/,"mp4") %>" />
      </video></p>
+     <p class="clear"></p>
      <p class="btn btn-info wideview">Wide View</p>
    <% end %>
    <% if MIME::Types.type_for(@post.video2.path).to_s.index("image") %>
