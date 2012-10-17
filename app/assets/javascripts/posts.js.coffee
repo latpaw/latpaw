@@ -56,7 +56,7 @@ $(document).ready ->
   height = document.documentElement.clientHeight
   width = document.documentElement.clientWidth
   $("#loginpage").css "height", height
-  $('#loginpage').click () ->
+  $('#linkpost').click () ->
      $('#loginpage').animate
       # height:0,
       marginTop:-height

@@ -208,28 +208,32 @@ a#activetag:hover{text-decoration: none;}
 .red{color:#f00}
 
 
-#linkpost {padding:10px;display:block;float:left;
-	border-radius:50%;width:50px;height:50px;line-height:45px;
-    margin-right:150px;margin-top:200px;float:right;box-shadow:0 3px 8px #aaa, 0 2px 3px #fff inset;
-    background: -moz-linear-gradient(center top, #f7f7f7, #e7e7e7);
-    text-align:center;font-weight:bold;z-index:100
+#linkpost {padding:10px;display:block;font-size:40px;
+	border-radius:50%;width:50px;height:50px;
+    margin:200px auto 0;position:relative;overflow:hidden;
+    /*box-shadow:0 3px 8px #aaa, 0 2px 3px #fff inset;*/
+    /*background: -moz-linear-gradient(center top, #f7f7f7, #e7e7e7);*/
+    text-align:center;z-index:100;
+    border:1px #fff solid;
 }
+#linkpost_{color:#fff;margin-top:-60px;display:block;position:relative;-moz-transition:all 0.5s ease-in-out;}
 
-#linkpost:hover{text-decoration: none;
-background: -moz-linear-gradient(center top, #fafafa, #eaeaea);
+#linkpost_:hover{text-decoration: none;display:block;position:relative;
+/*background: -moz-linear-gradient(center top, #fafafa, #eaeaea);*/
+margin-top:0;
 }
-#linkpost:before{
+/*#linkpost:before{
     display:block;
 	border-radius:50%;width:100px;height:100px;
     float:left;margin-left:-25px;margin-top:-25px;
     box-shadow:0 8px 48px #ddd inset;
     text-align:center;
-    content:"";z-index:-1;
-}
-#linkpost:after{
-	content:"posts";display:block;
+    content:"&nu;";z-index:-1;
+}*/
+/*#linkpost:after{
+	content:" ";display:block;
 	float:left;margin-top:-75px;margin-left:10px;
-}
+}*/
 
 
 #tag_id{margin-bottom: 0!important;}
