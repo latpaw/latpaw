@@ -2,7 +2,7 @@ class Post < ActiveRecord::Base
   attr_accessible :tag_list, :content, :name, :video2, :userid, :file2
 
   has_many :comments, :dependent => :destroy
-  
+  belongs_to :user
  acts_as_taggable
  acts_as_taggable_on :skills, :interests
 

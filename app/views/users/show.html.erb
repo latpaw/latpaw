@@ -2,10 +2,16 @@
 <p>Email: <%= @user.email %></p>
  <p>Create Time: <%= time_ago_in_words(@user.created_at) %></p>
  <p>Update Time: <%= time_ago_in_words(@user.updated_at) %></p>
- <h3 id="ac">All Comments for You</h3>
+ <h3 id="ac">All Posts and Comments for You</h3>
 
  <% @posts.map do |p| %>
+   <h3><i class="icon-adjust"></i> <%= link_to p.name, p %></h3>
+   <% unless p.comments.empty? %>
+   <div class="user_pc">
+   	<span class="gray">Comments:</span>
    <% p.comments.map do |c| %>
-     <p> <span class="gray"> <%= c.commenter %></span>:<%= c.body%></p>
+     <p> <span class="gray"> <%= c.commenter %>:<%= link_to c.body, "/posts/#{p.id}##{dom_id(c)}" %></span></p>
+   <% end %>
+   </div>
    <% end %>
  <% end %>

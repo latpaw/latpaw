@@ -17,3 +17,6 @@
 
 # Ignore all the file in public
 /public/*
+
+#Ignore the env file
+/.env

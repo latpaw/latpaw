@@ -24,6 +24,13 @@
         <% end %>
     </p>
     <% end %>
+<!--     <p class="tags indextags" id="alltag"><i class="icon-tags pull-left"></i><span> : </span>
+       <% if post.tags == [] %>
+         <span class="label label-success empty">Empty Tags</span>
+       <% else%>
+            <%= render :partial=>'tag', :collection=>post.tags %>
+       <% end %>
+    </p> -->
   </section>
 <% end %>
 </article>
