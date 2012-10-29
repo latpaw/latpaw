@@ -24,8 +24,9 @@ Aa::Application.routes.draw do
    match 'posts/:post_id/add_reply/', :to=>'comments#add_reply'
    # match 'tags/add', :to=>"tags#add"
 
+  match 'users/about', :to=>'users#about'
   match 'users/:id', :to=>'users#show'
- 
+
   root :to => 'posts#index'
 
   # See how all your routes lay out with "rake routes"
