@@ -23,7 +23,8 @@ Linux 命令大全,集锦
     <%= f.text_field :command,:class=>"span10",:placeholder=>"主要指令" %>
     <%= f.text_field :name,:class=>"span10",:placeholder=>"命令" %>
     <%= f.text_field :desc,:class=>"span10",:id=>"commdesc",:placeholder=>"描述" %>
-    <%= f.text_area :detail,:class=>"span10",:id=>"commdesc",:placeholder=>"详细用法" %>
+    <p class="span10 left0"><%= f.text_area :detail,:id=>"redactor_content",:placeholder=>"详细用法" %></p>
+    <div class="clear"></div>
     <%= f.submit "", :value=>"添加" %>
   </div>
 <% end %>
