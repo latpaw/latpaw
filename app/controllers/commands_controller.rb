@@ -1,7 +1,7 @@
 class CommandsController < ApplicationController
 
 layout "comm_lay"
- # load_and_authorize_resource
+ load_and_authorize_resource
  # #  skip_authorize_resource :only=> :tag
 
  #  def tag

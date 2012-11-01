@@ -18,6 +18,7 @@ class Ability
       can :read, Post
       cannot :remove, Post
       cannot :destory, Comment
+      can :read, Command
       cannot :create, Command
       cannot :destroy, Command
     end

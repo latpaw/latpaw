@@ -60,6 +60,7 @@ module Aa
     config.assets.initialize_on_precompile = false
 
     config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
-
+    config.assets.compress = true
+    config.assets.js_compressor = :uglifier
   end
 end

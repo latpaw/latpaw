@@ -1,0 +1,7 @@
+<%= form_for @command do |f| %>
+主要指令<%= f.text_field :command,:class=>"span10" %>
+命令<%= f.text_field :name,:class=>"span10"%>
+描述<%= f.text_field :desc,:class=>"span10"%>
+详细<%= f.text_area :detail,:id=>"redactor_content",:class=>"span10"%>
+<%= f.submit "更新" %>
+<% end %>
