@@ -10,8 +10,9 @@
     <h3><%= link_to post.name , post %></h3>
     <p class="gray"><%= time_tag post.created_at %></p>
     <%  abc = truncate(post.content,:length=>300) %>
-    <p><%= raw markdown.render(abc) %></p>
-    <% unless post.video2.to_s.empty? %>
+    <p><%= raw markdown.render(abc) %></pre></p>
+
+        <% unless post.video2.to_s.empty? %>
      <p>
       <% if MIME::Types.type_for(post.video2.path).to_s.index("video")%>
         <% if request.env["HTTP_USER_AGENT"].index("IE") %>
@@ -24,14 +25,8 @@
         <% end %>
     </p>
     <% end %>
-<!--     <p class="tags indextags" id="alltag"><i class="icon-tags pull-left"></i><span> : </span>
-       <% if post.tags == [] %>
-         <span class="label label-success empty">Empty Tags</span>
-       <% else%>
-            <%= render :partial=>'tag', :collection=>post.tags %>
-       <% end %>
-    </p> -->
   </section>
+
 <% end %>
 </article>
 
