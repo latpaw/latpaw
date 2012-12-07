@@ -1,40 +1,40 @@
 <%= content_for :title do %>
-  &lt;%= p Latpaw.me %&gt;
+ &lt;%= p Latpaw.me %&gt;
 <% end %>
 
 <p><%= link_to "首页", :root %> / <%= link_to "博客", posts_path %> / <span class="gray">列表</span></p>
 <article>
 
 <% @posts.each do |post| %>
-  <section class="articles">
+ <section class="articles">
     <h3><%= link_to post.name , post %></h3>
     <p class="gray"><%= time_tag post.created_at %></p>
     <%  abc = truncate(post.content,:length=>300) %>
     <p><%= raw markdown.render(abc) %></td></tr></table></pre></p>
 
         <% unless post.video2.to_s.empty? %>
-     <p>
-      <% if MIME::Types.type_for(post.video2.path).to_s.index("video")%>
-        <% if request.env["HTTP_USER_AGENT"].index("IE") %>
-          <%= link_to "Watch the video", post.video2.url.gsub(/webm/,"mp4"),:class=>"btn btn-info" %>
-          <% else %>
-           <%= link_to "Watch the video", post.video2.url,:class=>"btn btn-info" %>
-          <% end %>
-        <% else %>
-          <%= link_to "Download", post.video2.url.gsub(/webm/,"mp4"),:class=>"btn btn-info" %>
+          <p>
+            <% if MIME::Types.type_for(post.video2.path).to_s.index("video")%>
+              <% if request.env["HTTP_USER_AGENT"].index("IE") %>
+                <%= link_to "Watch the video", post.video2.url.gsub(/webm/,"mp4"),:class=>"btn btn-info" %>
+              <% else %>
+                <%= link_to "Watch the video", post.video2.url,:class=>"btn btn-info" %>
+              <% end %>
+            <% else %>
+              <%= link_to "Download", post.video2.url.gsub(/webm/,"mp4"),:class=>"btn btn-info" %>
+            <% end %>
+          </p>
         <% end %>
-    </p>
+      </section>
+
     <% end %>
-  </section>
+  </article>
 
-<% end %>
-</article>
+  <div class="digg_pagination">
+    <%= will_paginate @posts%>
+  </div>
 
-<div class="digg_pagination">
-  <%= will_paginate @posts%>
-</div>
-
-<br />
+  <br />
 
 
 
