@@ -1,4 +1,4 @@
-source 'http://ruby.taobao.org'
+source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
 
@@ -58,7 +58,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
-  gem 'thin'
   gem "rspec-cells"
   gem "capybara", :require => false
   gem "sunspot-rails-tester"
