@@ -34,7 +34,7 @@
  <% end %>
 
 <p>
-  <%=  markdown(@post.content) %>
+  <%=  markdown(@post.content).html_safe %>
 </p>
 
 

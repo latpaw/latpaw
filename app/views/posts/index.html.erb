@@ -10,7 +10,7 @@
     <h3><%= link_to post.name , post %></h3>
     <p class="gray"><%= time_tag post.created_at %></p>
     <%  abc = truncate(post.content,:length=>300) %>
-    <p><%= raw markdown.render(abc) %></td></tr></table></pre></p>
+    <p><%= raw markdown(abc).html_safe %></td></tr></table></pre></p>
 
         <% unless post.video2.to_s.empty? %>
           <p>
