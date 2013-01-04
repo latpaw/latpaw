@@ -44,6 +44,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1
   # GET /posts/1.json
+  include PostsHelper  #  #call for methods in helper
   def show
     @postss = Post.all
     @post = Post.find(params[:id])
@@ -52,9 +53,11 @@ class PostsController < ApplicationController
     @lastpost = Post.order("created_at DESC").first
     @postnext = @post.next
     @prepost = prepost(@post) unless @post.id == 1
+    markdown_post = @post
+    markdown_post.content = markdown(@post.content)
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @post }
+      format.json { render json: markdown_post }
     end
   end
 
