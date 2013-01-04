@@ -1,10 +1,11 @@
-source 'http://ruby.taobao.org'
+source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'haml'
 gem 'nokogiri'
 gem 'spidr'
 gem 'permalink'
@@ -23,7 +24,6 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'will_paginate'
 gem 'cells'
-gem 'rails_admin'
 gem 'bootstrap'
 gem 'simple_form'
 gem 'rolify'
@@ -60,7 +60,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
-  gem 'thin'
   gem "rspec-cells"
   gem "capybara", :require => false
   gem "sunspot-rails-tester"
