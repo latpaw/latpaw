@@ -7,10 +7,10 @@
 
 <% @posts.each do |post| %>
  <section class="articles">
-    <h3><%= link_to post.name , post %></h3>
+   <h3><%= link_to post.name , post ,:id=>"link_#{post.id}", :class=>"link_"%><%= link_to ">>", post, :class=>"gray pull-right"%></h3>
     <p class="gray"><%= time_tag post.created_at %></p>
     <%  abc = truncate(post.content,:length=>300) %>
-    <p><%= raw markdown(abc).html_safe %></td></tr></table></pre></p>
+    <div id="content_<%= post.id %>"><%= markdown(abc).gsub(/<\/?p>/,"").html_safe%></div>
 
         <% unless post.video2.to_s.empty? %>
           <p>
@@ -38,4 +38,28 @@
 
 
 
-
+  <script type="text/javascript">
+    $("h3 a.link_").click(function(e){
+        e.preventDefault();
+        var id = this.id.replace("link_","")
+        var c = $("#content_"+id)
+        var p = $("#contentplus_"+id)
+        if($("#contentplus_"+id)[0]==undefined){
+        $.ajax({
+url:this.href+".json",
+dataType:"json",
+success:function(data){
+c.css("display","none")
+c.after("<div id='contentplus_"+id+"' ></div>")
+$("#contentplus_"+id).html(data.content)
+}
+}); 
+        }else{
+        if(c.css("display")=="none"){c.css("display","block")}else{c.css("display","none")}
+        if(p.css("display")!="none"){p.css("display","none")}else{p.css("display","block")}
+        
+        }
+        }); 
+  
+  
+  </script>
