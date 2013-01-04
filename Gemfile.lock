@@ -303,6 +303,7 @@ DEPENDENCIES
   devise
   factory_girl_rails
   jquery-rails
+  libv8
   memcache-client
   mini_magick
   nokogiri
