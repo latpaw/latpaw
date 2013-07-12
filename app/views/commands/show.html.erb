@@ -5,4 +5,4 @@
 <p class="pull-right gray"><span id="command_time_1" class="gray">添加于<%= ((Time.current - @command.created_at)/86400).floor %>天前</span><% if can? :edit, @command %> | <%= link_to "编辑", edit_command_path,:class=>"gray" %><% end %></p>
 <p class="command_name"><span style="color:#a00">命令: </span><%= @command.name %></p>
 <p class="command_desc"><span  style="color:#0a0">描述: </span><%= @command.desc %></p>
-<p class="command_detail"><span style="color:#00a">详细: </span># raw markdown.render(@command.detail) %></p>
+<p class="command_detail"><span style="color:#00a">详细: </n><%=raw @command.detail  %></p>
